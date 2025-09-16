@@ -1,163 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Documentation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-        
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-        }
-        
-        .doc-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        .doc-button {
-            display: block;
-            width: 100%;
-            padding: 20px 24px;
-            background: #fff;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .doc-button:hover {
-            border-color: #0D8082;
-            background: #f8fffe;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 128, 130, 0.15);
-        }
-        
-        .doc-button:active {
-            transform: translateY(0);
-        }
-        
-        .doc-title {
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-        
-        .doc-description {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            font-size: 14px;
-            color: #888;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 24px;
-                margin: 0 10px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            .doc-button {
-                padding: 16px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Roboto',sans-serif;line-height:1.6;color:#333;background:#f5f5f5;padding:40px 20px}
+    .container{max-width:800px;margin:0 auto;background:#fff;padding:40px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+    h1{font-size:32px;font-weight:700;margin-bottom:16px;color:#1a1a1a}
+    .subtitle{font-size:18px;color:#666;margin-bottom:40px}
+    .doc-list{display:flex;flex-direction:column;gap:16px}
+    .doc-button{display:block;width:100%;padding:20px 24px;background:#fff;border:2px solid #e2e8f0;border-radius:8px;text-decoration:none;color:#333;font-size:16px;font-weight:500;transition:all .3s ease;cursor:pointer}
+    .doc-button:hover{border-color:#0D8082;background:#f8fffe;transform:translateY(-2px);box-shadow:0 4px 12px rgba(13,128,130,.15)}
+    .doc-title{font-weight:700;color:#1a1a1a;margin-bottom:4px}
+    .doc-description{font-size:14px;color:#666}
+    .footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:14px;color:#888}
+    @media (max-width:768px){.container{padding:24px;margin:0 10px} h1{font-size:24px} .doc-button{padding:16px 20px}}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Brand Documentation</h1>
-        <p class="subtitle">Design guidelines and brand standards for all platforms</p>
-        
-        <div class="doc-list">
-            <a href="miami.html">miamilots.com</a>
-                <div class="doc-title">miamilots.com</div>
-                <div class="doc-description">US wholesale liquidation platform - Brand guide and design standards</div>
-            </a>
-            
-            <a href="eurolots/index.html" class="doc-button">
-                <div class="doc-title">eurolots.com</div>
-                <div class="doc-description">European wholesale liquidation platform - Brand guide and design standards</div>
-            </a>
-            
-            <a href="888lots/index.html" class="doc-button">
-                <div class="doc-title">888lots.com</div>
-                <div class="doc-description">US wholesale liquidation platform - Brand guide and design standards</div>
-            </a>
-            
-            <a href="888lots-ca/index.html" class="doc-button">
-                <div class="doc-title">888lots.ca</div>
-                <div class="doc-description">Canadian wholesale liquidation platform - Brand guide and design standards</div>
-            </a>
-            
-            <a href="britdeals/index.html" class="doc-button">
-                <div class="doc-title">britdeals.co.uk</div>
-                <div class="doc-description">UK wholesale liquidation platform - Brand guide and design standards</div>
-            </a>
-        </div>
-        
-        <div class="footer">
-            Last updated: <span id="lastUpdated"></span> | Version 2.1
-        </div>
+  <div class="container">
+    <h1>Brand Documentation</h1>
+    <p class="subtitle">Design guidelines and brand standards for all platforms</p>
+
+    <div class="doc-list">
+      <!-- MIAMI: this works now because the <a> wraps the inner content and uses a relative path -->
+      <a href="miami.html" class="doc-button">
+        <div class="doc-title">miamilots.com</div>
+        <div class="doc-description">US wholesale liquidation platform - Brand guide and design standards</div>
+      </a>
+
+      <!-- The links below will work once you add these files/folders -->
+      <a href="eurolots/index.html" class="doc-button">
+        <div class="doc-title">eurolots.com</div>
+        <div class="doc-description">European wholesale liquidation platform - Brand guide and design standards</div>
+      </a>
+
+      <a href="888lots/index.html" class="doc-button">
+        <div class="doc-title">888lots.com</div>
+        <div class="doc-description">US wholesale liquidation platform - Brand guide and design standards</div>
+      </a>
+
+      <a href="888lots-ca/index.html" class="doc-button">
+        <div class="doc-title">888lots.ca</div>
+        <div class="doc-description">Canadian wholesale liquidation platform - Brand guide and design standards</div>
+      </a>
+
+      <a href="britdeals/index.html" class="doc-button">
+        <div class="doc-title">britdeals.co.uk</div>
+        <div class="doc-description">UK wholesale liquidation platform - Brand guide and design standards</div>
+      </a>
     </div>
-    
-    <script>
-        // Set current date
-        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
-        
-        // Add click analytics (if needed)
-        document.querySelectorAll('.doc-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Analytics tracking could go here
-                console.log('Clicked:', this.querySelector('.doc-title').textContent);
-            });
-        });
-    </script>
+
+    <div class="footer">
+      Last updated: <span id="lastUpdated"></span> | Version 2.1
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+  </script>
 </body>
 </html>
