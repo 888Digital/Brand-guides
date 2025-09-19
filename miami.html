@@ -287,6 +287,18 @@
             color: #00ABA9;
             font-weight: bold;
         }
+
+        .prompt-box {
+            background: #f0f2f5;
+            border-left: 6px solid #1A202C;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
         
         @media (max-width: 768px) {
             .do-dont {
@@ -720,6 +732,32 @@
                 </div>
             </div>
 
+            <!-- NEW SECTION: Standard Banner Dimensions -->
+            <h3 class="section-subtitle">Standard Advertising Dimensions</h3>
+            <div class="text-block">
+                To ensure consistency and high performance, use the following standard dimensions for all campaign assets. These sizes are optimized for the best performance across web, mobile, and social platforms.
+            </div>
+            <div class="do-dont">
+                <div class="do-dont-item do" style="background: #f8f9fa; border-color: #ddd;">
+                    <h4 style="color: #111;">✓ Top Web & Desktop Banners</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>• <strong>Medium Rectangle:</strong> 300 x 250 px</li>
+                        <li>• <strong>Leaderboard:</strong> 728 x 90 px</li>
+                        <li>• <strong>Half Page:</strong> 300 x 600 px</li>
+                        <li>• <strong>Large Rectangle:</strong> 336 x 280 px</li>
+                    </ul>
+                </div>
+                <div class="do-dont-item do" style="background: #f8f9fa; border-color: #ddd;">
+                    <h4 style="color: #111;">✓ Top Mobile & Social Banners</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>• <strong>Mobile Leaderboard:</strong> 320 x 50 px</li>
+                        <li>• <strong>Large Mobile Banner:</strong> 320 x 100 px</li>
+                        <li>• <strong>Social Square:</strong> 1080 x 1080 px</li>
+                        <li>• <strong>Stories & Reels:</strong> 1080 x 1920 px</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="checklist">
                 <h4>Banner Design Requirements</h4>
                 <ul>
@@ -745,7 +783,7 @@
             
             <div style="background: #f8f9fa; padding: 24px; border-radius: 8px; font-family: monospace;">
                 <strong>Primary Colors:</strong><br>
-                Miamilots Teal: #00ABA9<br>
+                Miamilots Teal: #0D8082<br>
                 Action Blue: #337AB7<br>
                 Dark Text: #111111<br>
                 White Background: #FFFFFF<br><br>
@@ -767,6 +805,43 @@
                 • NO decorative elements without function
             </div>
         </div>
+
+        <!-- NEW SECTION: LLM Self-Assessment -->
+        <div class="section">
+            <h2 class="section-title">LLM-Powered Self-Assessment</h2>
+            <div class="text-block">
+                Use this prompt to quickly check if your creative work aligns with the Miamilots brand standards. Copy the entire text below, paste it into an AI chat tool (like Google Gemini), and then paste your own work (e.g., email copy, banner text, design concept) at the end for an instant evaluation.
+            </div>
+            <div class="prompt-box">
+You are a Brand Guardian for "Miamilots," a B2B marketplace for professional resellers. Your task is to evaluate the provided creative content against the Miamilots brand guidelines.
+
+**Core Brand Principles:**
+- **Target Audience:** B2B resellers, bulk buyers, e-commerce entrepreneurs. NOT retail consumers.
+- **Personality:** Minimal, sleek, profit-oriented, results-driven.
+- **Design Philosophy:** Speed over sophistication, clarity, conversion-focused. Lead with business value (margins, ROI, price, quantity).
+- **Tone of Voice:** Professional, direct, and value-focused. Avoid hype and consumer-focused lifestyle language.
+- **Typography:** Roboto only. No decorative or cursive fonts.
+- **Non-Negotiables:** Prominent call-to-action (CTA), readable text, mobile-first, clear business value.
+
+**Evaluation Checklist (Analyze the user's content based on these points):**
+
+1.  **Audience Mismatch:** Does the language sound like it's for a retail shopper instead of a professional B2B reseller? (e.g., "Treat yourself!" vs. "Increase your profit margins.") - Flag this immediately.
+2.  **Readability & Clarity:** Is the message instantly understandable for a busy professional? Is the text too small or cluttered?
+3.  **Profit Focus:** Is the business value (e.g., profit, savings, bulk opportunity) the primary message, or is it buried?
+4.  **Tone & Personality:** Does the tone feel professional and results-driven, or is it overly casual, decorative, or unprofessional?
+5.  **Conversion Killer Check:** Does the content commit any "Conversion Killer" mistakes, such as having a weak CTA, buried pricing, or visual clutter?
+
+**Your Response Format:**
+Provide a "Brand Alignment Score" out of 100. Then, give a brief summary followed by a bulleted list of "Strengths" and "Areas for Improvement." Be direct and provide actionable feedback.
+
+---
+
+**Now, please evaluate the following content:**
+
+[**PASTE YOUR CONTENT HERE - e.g., email subject line and body, banner headline and copy, or a description of your visual design**]
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
