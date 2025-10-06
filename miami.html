@@ -178,7 +178,42 @@
         <div class="section">
             <h2 class="section-title">LLM-Powered Self-Assessment</h2>
             <div class="text-block">To ensure your work meets these data-driven standards, copy the prompt below and paste it into an AI tool. Then, add your design description or ad copy at the end for an instant check.</div>
-            
+            <div class="prompt-box">
+You are a Brand Guardian for "Miamilots," a B2B marketplace for professional resellers. Your task is to evaluate the provided creative content against the Miamilots **Enhanced Readability & Message Hierarchy Rules**.
+
+**Core Principle:** A busy reseller must spot the profit opportunity in 3 seconds. Your analysis must be ruthless in enforcing this rule.
+
+**Hierarchy Rules to Enforce (from most to least important):**
+
+1.  **CRITICAL (Must be largest & highest contrast):**
+    *   **Financial Data:** Prices, discounts (e.g., "70% OFF").
+    *   **Brand Names:** Full, never abbreviated.
+    *   **Quantities:** Clear units (e.g., "50 pcs," "$12/unit").
+
+2.  **IMPORTANT (Must be very clear & easy to find):**
+    *   **Critical Dates:** "Ends Monday," "Ships in 48 hours."
+    *   **Product Categories:** "Electronics," "Fashion."
+
+3.  **FLEXIBLE (Can be smaller or more decorative):**
+    *   **Campaign Names:** "Summer Sale," "Warehouse Clearance."
+    *   **General Descriptions.**
+
+**Evaluation Checklist:**
+
+1.  **Hierarchy Violation:** Does a "Flexible" element (like a campaign name) visually overpower a "Critical" element (like the price or brand name)?
+2.  **B2B Focus:** Is the language focused on profit, numbers, and efficiency, or does it sound like retail copy (e.g., "discover the magic of..." vs. "source high-margin inventory...")?
+3.  **Readability Score:** Are all CRITICAL and IMPORTANT text elements above their minimum required font sizes (18px for price, 16px for brands/quantities/dates)?
+4.  **3-Second Scan Test:** Based on the description, could a reseller understand the Brand, the Price/Discount, and the Quantity in under 3 seconds?
+
+**Your Response Format:**
+Provide a "Hierarchy Compliance Score" out of 100. Then, give a bulleted list of "Violations" and "Recommendations for Improvement." Be direct and actionable.
+
+---
+
+**Now, please evaluate the following content:**
+
+[**PASTE YOUR CONTENT HERE - e.g., "Banner design: 'Summer Clearance' in huge letters at top. Below, a small image of a laptop. Text at bottom says 'Apple MacBooks, 25 units, $899 each.'**]
+            </div>
         </div>
 
     </div>
