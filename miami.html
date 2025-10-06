@@ -6,6 +6,7 @@
     <title>Miamilots Wholesale Design Guide - Final Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        /* All previous styles remain the same... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: #f8fafc; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
@@ -42,6 +43,8 @@
         .critical .priority-badge { background: #ff2065; color: white; }
         .important .priority-badge { background: #f59e0b; color: white; }
         .hierarchy-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
+        /* ADDED FONT-SPEC CLASS */
+        .font-spec { background: white; border-radius: 8px; padding: 12px; margin-top: 12px; font-weight: 700; font-size: 16px; text-align: center; color: #1A202C; border: 2px solid #e2e8f0;}
         .dimension-card { background: linear-gradient(135deg, #1A202C 0%, #2d3748 100%); color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
         .dimension-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0D8082; }
         .dimension-size { font-size: 32px; font-weight: 900; color: white; margin-bottom: 12px; font-family: 'Courier New', monospace; }
@@ -112,15 +115,41 @@
         </div>
     </div>
 
+    <!-- REVISED SECTION 3 -->
     <div class="section">
-        <h2 class="section-title"><span class="section-number">3</span> The Deal Hierarchy Law</h2>
-        <p style="font-size: 17px; color: #4A5568;">The visual importance must match the deal structure. This order is non-negotiable.</p>
+        <h2 class="section-title"><span class="section-number">3</span> The Deal Hierarchy Law & Font System</h2>
+        <p style="font-size: 17px; color: #4A5568;">The visual importance must match the deal structure. Use these font sizes as your starting point for all desktop banners to ensure the hierarchy is clear and consistent.</p>
         <div class="hierarchy-grid">
-             <div class="hierarchy-card critical"><span class="priority-badge">#1: THE OFFER</span><h3>📢 Deal Type & Value</h3><div class="usage">The first thing a user must see. Is it a Price, a Discount (%), or an Invitation to Negotiate?</div></div>
-            <div class="hierarchy-card critical"><span class="priority-badge">#2: THE PRODUCT</span><h3>🏷️ Brand & Category</h3><div class="usage">What is it? Be specific. "Apple" is better than "Phones." "Truckloads" is a category.</div></div>
-            <div class="hierarchy-card critical"><span class="priority-badge">#3: THE SCALE</span><h3>📊 Lot Size</h3><div class="usage">"50 units," "1 pallet," "1 pc & up." Defines the investment size.</div></div>
-            <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🎯 The Reason/Qualifier</h3><div class="usage">This adds context and urgency. "1s & 2s," "First Order," "NJ Overload," "Summer Clearance."</div></div>
-            <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🚚 Logistics</h3><div class="usage">"FBA Eligible" and "Ships from Miami" are key decision factors. Use prominent badges.</div></div>
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#1: THE HERO</span>
+                <h3>📢 Deal Type & Value</h3>
+                <div class="usage">The main event. Must be the largest element on the banner.</div>
+                <div class="font-spec">48px - 72px</div>
+            </div>
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#2: THE SUBJECT</span>
+                <h3>🏷️ Brand & Category</h3>
+                <div class="usage">What is it? Must be instantly identifiable.</div>
+                <div class="font-spec">28px - 36px</div>
+            </div>
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#3: THE SCALE</span>
+                <h3>📊 Lot Size</h3>
+                <div class="usage">Defines the investment size and scope of the deal.</div>
+                <div class="font-spec">22px - 28px</div>
+            </div>
+            <div class="hierarchy-card important">
+                <span class="priority-badge">SUPPORTING INFO</span>
+                <h3>🎯 Reason / Qualifier</h3>
+                <div class="usage">Adds context and urgency ("1s & 2s," "NJ Overload").</div>
+                <div class="font-spec">18px - 22px</div>
+            </div>
+            <div class="hierarchy-card important">
+                <span class="priority-badge">SUPPORTING INFO</span>
+                <h3>🚚 Logistics</h3>
+                <div class="usage">Critical decision factor. Often best presented as a badge.</div>
+                <div class="font-spec">16px - 20px</div>
+            </div>
         </div>
     </div>
 
@@ -180,7 +209,7 @@
         <div class="checklist">
             <ul>
                 <li>Is the <strong>Campaign Blueprint</strong> (Standard, Promo, etc.) instantly clear?</li>
-                <li>Does the design obey the <strong>Deal Hierarchy Law</strong> for that blueprint?</li>
+                <li>Does the design obey the <strong>Deal Hierarchy & Font System</strong> for that blueprint?</li>
                 <li>Is the <strong>Reason/Qualifier</strong> (e.g., "1s & 2s") clear and effective?</li>
                 <li>Is the <strong>Call-to-Action</strong> correct for the deal type? ("View Lot" vs. "Make Offer")</li>
                 <li>Is every word, number, and brand name <strong>100% accurate</strong> and spell-checked?</li>
