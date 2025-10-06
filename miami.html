@@ -221,38 +221,8 @@ First, state the **Campaign Blueprint**. Then, provide a **Hierarchy Compliance 
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">7</span> AI Tool: Banner Image Generation</h2>
-        <p style="font-size: 17px; color: #4A5568;">Use these prompts in Midjourney, DALL-E, or other AI image tools to generate on-brand visuals. Copy the prompt, replace the bracketed text, and attach the best results from your Google Drive.</p>
-        <div class="example-grid">
-            <div class="prompt-box-container">
-                <button class="copy-btn" onclick="copyPrompt('prompt1')">Copy</button>
-                <pre class="prompt-box" id="prompt1"><strong>For Standard Lots:</strong>
-Product photography of [a neat stack of 50 new Vtech toy boxes], clean studio lighting, minimalist light gray background, B2B wholesale context, organized and professional, shot from a slightly elevated angle, with clear negative space on the right for text overlay --ar 16:9</pre>
-            </div>
-            <div class="prompt-box-container">
-                <button class="copy-btn" onclick="copyPrompt('prompt2')">Copy</button>
-                <pre class="prompt-box" id="prompt2"><strong>For Promotions:</strong>
-Graphic design banner for a clearance sale, featuring [Nike and Adidas shoes] in a dynamic composition. Bold typography with the number "70%" as the focal point. Energetic feel with abstract motion lines. Use a primary color of #ff2065 for accents. Clear space at the bottom for text. --ar 1:1</pre>
-            </div>
-            <div class="prompt-box-container">
-                <button class="copy-btn" onclick="copyPrompt('prompt3')">Copy</button>
-                <pre class="prompt-box" id="prompt3"><strong>For Negotiable Lots:</strong>
-A single [high-end Tory Burch handbag] presented as a premium, exclusive item. Dramatic, single-source studio lighting on a dark charcoal background. Focus on texture and quality. Conveys a sense of high value and exclusivity, concept of a one-of-a-kind deal. Minimalist, with lots of copy space. --ar 16:9</pre>
-            </div>
-        </div>
-    </div>
-
 </div>
 <script>
-    function copyPrompt(promptId) {
-        const promptText = document.getElementById(promptId);
-        const button = promptText.previousElementSibling;
-        navigator.clipboard.writeText(promptText.textContent.split('\n').slice(1).join('\n')).then(() => {
-            button.textContent = 'Copied!';
-            setTimeout(() => { button.textContent = 'Copy'; }, 2000);
-        });
-    }
     const mainCopyButton = document.getElementById('copy-button-main');
     const mainPromptText = document.getElementById('prompt-text-main');
     mainCopyButton.addEventListener('click', () => {
