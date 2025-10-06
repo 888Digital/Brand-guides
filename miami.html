@@ -6,9 +6,8 @@
     <title>Miamilots Wholesale Design Guide - Final Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* All previous styles remain the same... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: linear-gradient(135deg, #f8fafc 0%, #e0f7fa 100%); }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: #f8fafc; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .header { background: linear-gradient(135deg, #0D8082 0%, #0a6365 100%); color: white; padding: 60px 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(13, 128, 130, 0.3); }
         .logo { font-size: 56px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
@@ -20,14 +19,22 @@
         .mission strong { color: #1A202C; }
         .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         .section-title { font-size: 32px; font-weight: 900; color: #1A202C; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
-        .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; }
-        .template-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+        .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; flex-shrink: 0; }
+        .stats-grid, .template-grid, .hierarchy-grid, .dimension-grid, .color-grid, .example-grid { display: grid; gap: 24px; margin-top: 32px; }
+        .stats-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .template-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .hierarchy-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .dimension-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .color-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .stat-card { background: #f8fafc; padding: 24px; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .stat-value { font-size: 48px; font-weight: 900; color: #0D8082; margin-bottom: 8px; }
+        .stat-label { font-size: 16px; color: #4A5568; line-height: 1.5; }
         .template-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
         .template-card .hierarchy { margin-top: auto; font-size: 14px; color: #4A5568; line-height: 1.8; }
         .template-icon { font-size: 48px; margin-bottom: 16px; display: block; }
         .template-card h3 { font-size: 22px; font-weight: 700; color: #0D8082; margin-bottom: 12px; }
         .template-card .use-when { background: #e0f7fa; padding: 12px; border-radius: 8px; font-size: 14px; color: #0D8082; margin-bottom: 12px; font-weight: 600; }
-        .hierarchy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; }
         .hierarchy-card { border-radius: 12px; padding: 24px; border: 3px solid; }
         .critical { border-color: #ff2065; background: #fff5f7; }
         .important { border-color: #f59e0b; background: #fffbeb; }
@@ -35,7 +42,16 @@
         .critical .priority-badge { background: #ff2065; color: white; }
         .important .priority-badge { background: #f59e0b; color: white; }
         .hierarchy-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
-        .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
+        .dimension-card { background: linear-gradient(135deg, #1A202C 0%, #2d3748 100%); color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .dimension-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0D8082; }
+        .dimension-size { font-size: 32px; font-weight: 900; color: white; margin-bottom: 12px; font-family: 'Courier New', monospace; }
+        .dimension-card .detail { font-size: 14px; opacity: 0.9; margin: 8px 0; padding-left: 20px; position: relative; }
+        .dimension-card .detail::before { content: '→'; position: absolute; left: 0; color: #0D8082; font-weight: bold; }
+        .color-card { text-align: center; }
+        .color-swatch { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .color-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: #1A202C; }
+        .color-hex { font-family: 'Courier New', monospace; font-size: 14px; color: #4A5568; font-weight: 600; }
+        .color-use { margin-top: 12px; font-size: 13px; color: #0D8082; font-weight: 600; line-height: 1.6; }
         .example-banner { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; }
         .example-banner .deal-type { font-weight: 700; color: #0D8082; margin-bottom: 8px; }
         .example-banner h4 { font-size: 24px; font-weight: 900; color: #1A202C; }
@@ -61,12 +77,23 @@
     <div class="header">
         <div class="logo">MIAMILOTS</div>
         <h1>Wholesale & Liquidation Design Guide</h1>
-        <p>This is the definitive formula for creating high-conversion sales tools for our professional resellers. This guide is built on our most successful campaigns.</p>
+        <p>This is the definitive formula for creating high-conversion sales tools for our professional resellers. This guide is built on our most successful campaigns and validated by our own user analytics.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">1</span> The Data Behind Our Rules: Why This Works</h2>
+        <p style="font-size: 17px; color: #4A5568;">These are not just opinions. Our design principles are a direct reflection of how our best customers behave on our site. Our email subscribers are our most valuable audience, and their data tells a clear story:</p>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value">485</div><div class="stat-label">Actions per user from our email list—nearly <strong>5x higher engagement</strong> than organic visitors. They are power users.</div></div>
+            <div class="stat-card"><div class="stat-value">87</div><div class="stat-label">Pages viewed on average by an email visitor—almost <strong>7x more research</strong>. They dig deep for deals and data.</div></div>
+            <div class="stat-card"><div class="stat-value">+45%</div><div class="stat-label">Higher CTR when a promo includes a specific <strong>Reason/Qualifier</strong> like "1s & 2s" or "First Order Discount."</div></div>
+            <div class="stat-card"><div class="stat-value">+40%</div><div class="stat-label">Engagement on unique lots when using a <strong>"Make an Offer" CTA</strong> vs. a standard "View Product" button.</div></div>
+        </div>
     </div>
 
     <div class="mission">
         <h2>🎯 The 3-Second Deal Rule</h2>
-        <p>Our buyers are professionals scanning for profit. Every design must communicate the core business opportunity in 3 seconds by answering:</p>
+        <p>Our data proves our best customers are hunters, not browsers. You have 3 seconds to communicate the core opportunity. Your design must instantly answer:</p>
         <p style="margin-top: 16px; padding-left: 20px; border-left: 4px solid #ff2065; font-weight: 600;">
             1. What is the <strong>DEAL STRUCTURE?</strong> (Fixed Price, Promo, or Negotiation?)<br>
             2. What is the <strong>PRODUCT?</strong> (Brand or Category?)<br>
@@ -75,7 +102,7 @@
     </div>
 
     <div class="section">
-        <h2 class="section-title"><span class="section-number">1</span> The 4 Campaign Blueprints</h2>
+        <h2 class="section-title"><span class="section-number">2</span> The 4 Campaign Blueprints</h2>
         <p style="font-size: 17px; color: #4A5568;">Every campaign you create will be for one of these four scenarios. Start with the correct blueprint.</p>
         <div class="template-grid">
             <div class="template-card"><span class="template-icon">📦</span><h3>A: Standard Lot</h3><div class="use-when">Your everyday inventory. Price is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. Price (per unit/total)<br>2. Brand/Category<br>3. Lot Size<br>4. Logistics (FBA/Warehouse)</div></div>
@@ -86,22 +113,41 @@
     </div>
 
     <div class="section">
-        <h2 class="section-title"><span class="section-number">2</span> The Deal Hierarchy Law</h2>
+        <h2 class="section-title"><span class="section-number">3</span> The Deal Hierarchy Law</h2>
         <p style="font-size: 17px; color: #4A5568;">The visual importance must match the deal structure. This order is non-negotiable.</p>
         <div class="hierarchy-grid">
-            <div class="hierarchy-card critical"><span class="priority-badge">#1: THE OFFER</span><h3>📢 Deal Type & Value</h3><div class="usage">The first thing a user must see. Is it a Price, a Discount (%), or an Invitation to Negotiate?</div></div>
+             <div class="hierarchy-card critical"><span class="priority-badge">#1: THE OFFER</span><h3>📢 Deal Type & Value</h3><div class="usage">The first thing a user must see. Is it a Price, a Discount (%), or an Invitation to Negotiate?</div></div>
             <div class="hierarchy-card critical"><span class="priority-badge">#2: THE PRODUCT</span><h3>🏷️ Brand & Category</h3><div class="usage">What is it? Be specific. "Apple" is better than "Phones." "Truckloads" is a category.</div></div>
             <div class="hierarchy-card critical"><span class="priority-badge">#3: THE SCALE</span><h3>📊 Lot Size</h3><div class="usage">"50 units," "1 pallet," "1 pc & up." Defines the investment size.</div></div>
             <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🎯 The Reason/Qualifier</h3><div class="usage">This adds context and urgency. "1s & 2s," "First Order," "NJ Overload," "Summer Clearance."</div></div>
             <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🚚 Logistics</h3><div class="usage">"FBA Eligible" and "Ships from Miami" are key decision factors. Use prominent badges.</div></div>
         </div>
     </div>
-    
-    <!-- Sections for Canvases & Colors are foundational and unchanged -->
 
     <div class="section">
-        <h2 class="section-title"><span class="section-number">3</span> Putting It All Together: Real Examples</h2>
-        <p style="font-size: 17px; color: #4A5568;">Notice how the hero element and CTA change for each deal structure.</p>
+        <h2 class="section-title"><span class="section-number">4</span> The Designer's Toolbox</h2>
+        <p style="font-size: 17px; color: #4A5568;">Use these exact specifications for consistency and performance.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 32px;">A: The 4 Core Canvases</h3>
+        <div class="dimension-grid">
+            <div class="dimension-card"><h3>🖥️ Desktop Skyline</h3><div class="dimension-size">1300 × 275px</div><div class="detail">Homepage hero banner</div><div class="detail">Export: JPG, max 200KB</div></div>
+            <div class="dimension-card"><h3>📱 Mobile/WhatsApp</h3><div class="dimension-size">500 × 500px</div><div class="detail">Square for broadcasts</div><div class="detail">Export: PNG, max 150KB</div></div>
+            <div class="dimension-card"><h3>📦 Feature Boxes</h3><div class="dimension-size">500 × 500px</div><div class="detail">Mid-page category highlights</div><div class="detail">Export: PNG, max 100KB each</div></div>
+            <div class="dimension-card"><h3>📧 Email Header</h3><div class="dimension-size">600 × 200px</div><div class="detail">Single column, mobile-safe</div><div class="detail">Export: JPG, max 120KB</div></div>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px;">B: The 2+4 Color System</h3>
+        <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background: #0D8082;"></div><div class="color-name">Primary Teal</div><div class="color-hex">#0D8082</div><div class="color-use"><strong>JOB: Get Clicks</strong><br>Use for CTAs & Prices. Never for backgrounds.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #ff2065;"></div><div class="color-name">Accent Pink</div><div class="color-hex">#ff2065</div><div class="color-use"><strong>JOB: Create Urgency</strong><br>Use for Discounts & Sales. Never for body text.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #1A202C;"></div><div class="color-name">Dark Charcoal</div><div class="color-hex">#1A202C</div><div class="color-use"><strong>JOB: Be Readable</strong><br>Use for all main text and headlines.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #4A5568;"></div><div class="color-name">Medium Gray</div><div class="color-hex">#4A5568</div><div class="color-use"><strong>JOB: Be Quiet</strong><br>Use for secondary info like dates or details.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #E0F7FA;"></div><div class="color-name">Light Teal</div><div class="color-hex">#E0F7FA</div><div class="color-use"><strong>JOB: Add Highlight</strong><br>Use for background sections and info boxes.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #F8FAFC; border: 2px solid #e2e8f0;"></div><div class="color-name">Light Gray BG</div><div class="color-hex">#F8FAFC</div><div class="color-use"><strong>JOB: Create Space</strong><br>Use for all main page and card backgrounds.</div></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">5</span> Putting It All Together: Real Examples</h2>
+         <p style="font-size: 17px; color: #4A5568;">Notice how the hero element and CTA change for each deal structure.</p>
         <div class="example-grid">
             <div class="example-banner">
                 <div class="deal-type">Standard Lot</div>
@@ -128,10 +174,10 @@
     </div>
     
     <div class="section">
-        <h2 class="section-title"><span class="section-number">4</span> The Pre-Flight Checklist</h2>
-        <p style="font-size: 17px; color: #4A5568;">Final check. If any answer is "no," fix it.</p>
+        <h2 class="section-title"><span class="section-number">6</span> The Quality Control Process</h2>
+        <p style="font-size: 17px; color: #4A5568;">Follow these two steps before submitting any creative for review.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 32px;">Step 1: The 5-Point Pre-Flight Check</h3>
         <div class="checklist">
-            <h3>Final Quality Check</h3>
             <ul>
                 <li>Is the <strong>Campaign Blueprint</strong> (Standard, Promo, etc.) instantly clear?</li>
                 <li>Does the design obey the <strong>Deal Hierarchy Law</strong> for that blueprint?</li>
@@ -140,15 +186,11 @@
                 <li>Is every word, number, and brand name <strong>100% accurate</strong> and spell-checked?</li>
             </ul>
         </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">5</span> LLM-Powered Self-Assessment</h2>
-        <p style="font-size: 17px; color: #4A5568;">Copy this prompt into an AI tool and add your design description for an instant compliance check.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px;">Step 2: LLM-Powered Self-Assessment</h3>
         <div class="prompt-box-container">
-            <button class="copy-btn" id="copy-button">Copy Prompt</button>
-            <pre class="prompt-box" id="prompt-text">
-You are a Brand Guardian for "Miamilots," a B2B wholesale and liquidation marketplace. Your task is to ruthlessly evaluate creative content against our **Deal-Driven Design Principles**.
+            <button class="copy-btn" id="copy-button-main">Copy</button>
+            <pre class="prompt-box" id="prompt-text-main">
+You are a Brand Guardian for "Miamilots," a B2B wholesale and liquidation marketplace. Your task is to ruthlessly evaluate creative content against our **Deal-Driven Design Principles**, which are based on our analytics showing that email users are our most engaged, high-intent audience.
 
 **Core Principle:** A professional reseller must understand the deal structure and profit opportunity in 3 seconds.
 
@@ -175,23 +217,49 @@ First, state the **Campaign Blueprint**. Then, provide a **Hierarchy Compliance 
 
 **Now, please evaluate the following content:**
 
-<strong>[PASTE YOUR CONTENT HERE - e.g., "Email Subject: 60% OFF First Order Discount with Back To School PCs & Laptop Brands"]</strong></pre>
+<strong>[PASTE YOUR CONTENT HERE]</strong></pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">7</span> AI Tool: Banner Image Generation</h2>
+        <p style="font-size: 17px; color: #4A5568;">Use these prompts in Midjourney, DALL-E, or other AI image tools to generate on-brand visuals. Copy the prompt, replace the bracketed text, and attach the best results from your Google Drive.</p>
+        <div class="example-grid">
+            <div class="prompt-box-container">
+                <button class="copy-btn" onclick="copyPrompt('prompt1')">Copy</button>
+                <pre class="prompt-box" id="prompt1"><strong>For Standard Lots:</strong>
+Product photography of [a neat stack of 50 new Vtech toy boxes], clean studio lighting, minimalist light gray background, B2B wholesale context, organized and professional, shot from a slightly elevated angle, with clear negative space on the right for text overlay --ar 16:9</pre>
+            </div>
+            <div class="prompt-box-container">
+                <button class="copy-btn" onclick="copyPrompt('prompt2')">Copy</button>
+                <pre class="prompt-box" id="prompt2"><strong>For Promotions:</strong>
+Graphic design banner for a clearance sale, featuring [Nike and Adidas shoes] in a dynamic composition. Bold typography with the number "70%" as the focal point. Energetic feel with abstract motion lines. Use a primary color of #ff2065 for accents. Clear space at the bottom for text. --ar 1:1</pre>
+            </div>
+            <div class="prompt-box-container">
+                <button class="copy-btn" onclick="copyPrompt('prompt3')">Copy</button>
+                <pre class="prompt-box" id="prompt3"><strong>For Negotiable Lots:</strong>
+A single [high-end Tory Burch handbag] presented as a premium, exclusive item. Dramatic, single-source studio lighting on a dark charcoal background. Focus on texture and quality. Conveys a sense of high value and exclusivity, concept of a one-of-a-kind deal. Minimalist, with lots of copy space. --ar 16:9</pre>
+            </div>
         </div>
     </div>
 
 </div>
 <script>
-    const copyButton = document.getElementById('copy-button');
-    const promptText = document.getElementById('prompt-text');
-    copyButton.addEventListener('click', () => {
-        const textArea = document.createElement('textarea');
-        textArea.value = promptText.textContent;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        copyButton.textContent = 'Copied!';
-        setTimeout(() => { copyButton.textContent = 'Copy Prompt'; }, 2000);
+    function copyPrompt(promptId) {
+        const promptText = document.getElementById(promptId);
+        const button = promptText.previousElementSibling;
+        navigator.clipboard.writeText(promptText.textContent.split('\n').slice(1).join('\n')).then(() => {
+            button.textContent = 'Copied!';
+            setTimeout(() => { button.textContent = 'Copy'; }, 2000);
+        });
+    }
+    const mainCopyButton = document.getElementById('copy-button-main');
+    const mainPromptText = document.getElementById('prompt-text-main');
+    mainCopyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(mainPromptText.textContent).then(() => {
+            mainCopyButton.textContent = 'Copied!';
+            setTimeout(() => { mainCopyButton.textContent = 'Copy'; }, 2000);
+        });
     });
 </script>
 </body>
