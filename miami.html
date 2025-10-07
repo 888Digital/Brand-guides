@@ -3,176 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miamilots | Wholesale & Liquidation Platform Design Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Miamilots Wholesale Design Guide - Final Version</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* [CSS from your provided document is used here for styling] */
+        /* All previous styles remain the same... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #111111; background: #FFFFFF; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 3px solid #0D8082; }
-        .logo-display { font-size: 48px; font-weight: 700; margin-bottom: 20px; color: #1A202C; }
-        .header h1 { font-size: 32px; font-weight: 700; color: #111111; margin-bottom: 16px; }
-        .header p { font-size: 18px; color: #666666; max-width: 600px; margin: 0 auto; }
-        .section { margin-bottom: 60px; }
-        .section-title { font-size: 28px; font-weight: 700; color: #111111; margin-bottom: 24px; border-left: 4px solid #0D8082; padding-left: 20px; }
-        .section-subtitle { font-size: 20px; font-weight: 500; color: #111111; margin: 32px 0 16px 0; }
-        .text-block { font-size: 16px; color: #333333; margin-bottom: 20px; line-height: 1.6; }
-        .hierarchy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 32px 0; }
-        .hierarchy-card { background: #f8f9fa; padding: 24px; border-radius: 8px; border-left: 4px solid; }
-        .hierarchy-card h3 { font-size: 18px; font-weight: 700; color: #111111; margin-bottom: 12px; }
-        .hierarchy-card .priority { color: white; font-size: 12px; font-weight: 700; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
-        .hierarchy-card .size { font-weight: 700; margin-bottom: 8px; }
-        .hierarchy-card .usage { font-size: 14px; color: #666666; margin-bottom: 12px; }
-        .example { padding: 12px; background: white; border: 1px solid #ddd; border-radius: 4px; margin-top: 8px; }
-        .critical { border-left-color: #D9534F; } .critical .priority { background: #D9534F; } .critical .size { color: #D9534F; }
-        .important { border-left-color: #f0ad4e; } .important .priority { background: #f0ad4e; } .important .size { color: #f0ad4e; }
-        .flexible { border-left-color: #5cb85c; } .flexible .priority { background: #5cb85c; } .flexible .size { color: #5cb85c; }
-        .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
-        .do-dont-item { padding: 24px; border-radius: 8px; border: 2px solid; }
-        .do { border-color: #28a745; background: #f8fff9; }
-        .dont { border-color: #D9534F; background: #fff8f8; }
-        .do h4 { color: #28a745; font-weight: 700; margin-bottom: 12px; }
-        .dont h4 { color: #D9534F; font-weight: 700; margin-bottom: 12px; }
-        .demo-section { background: #f8f9fa; padding: 32px; border-radius: 12px; margin: 32px 0; border: 2px solid #e9ecef; }
-        .demo-title { font-size: 20px; font-weight: 700; color: #111111; margin-bottom: 24px; }
-        .demo-card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-        .price-huge { font-size: 32px; font-weight: 900; color: #0D8082; line-height: 1; }
-        .discount-badge { background: #D9534F; color: white; font-size: 18px; font-weight: 700; padding: 8px 12px; border-radius: 4px; display: inline-block; }
-        .brand-name { font-size: 24px; font-weight: 700; color: #111111; }
-        .quantity { font-size: 20px; font-weight: 700; color: #0D8082; }
-        .date-critical { font-size: 18px; font-weight: 700; color: #D9534F; background: #fff3cd; padding: 6px 10px; border-radius: 4px; display: inline-block; }
-        .campaign-name { font-size: 14px; font-weight: 400; color: #666666; }
-        .checklist { background: #f0f8ff; padding: 24px; border-radius: 8px; border-left: 4px solid #337AB7; margin: 32px 0; }
-        .checklist h4 { color: #337AB7; font-weight: 700; margin-bottom: 16px; }
-        .checklist ul { list-style: none; padding-left: 0; }
-        .checklist li { margin-bottom: 8px; position: relative; padding-left: 24px; }
-        .checklist li::before { content: "✓"; position: absolute; left: 0; color: #0D8082; font-weight: bold; }
-        .prompt-box { background: #f0f2f5; border-left: 6px solid #1A202C; padding: 20px; font-family: 'Courier New', Courier, monospace; white-space: pre-wrap; word-wrap: break-word; font-size: 14px; border-radius: 8px; margin-top: 20px; }
-        .color-palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
-        .color-swatch { text-align: center; }
-        .color-circle { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px; border: 1px solid #ddd; }
-        .color-name { font-weight: bold; }
-        .color-hex { font-family: 'Courier New', Courier, monospace; font-size: 14px; color: #666; }
-        @media (max-width: 768px) { .do-dont, .hierarchy-grid { grid-template-columns: 1fr; } .logo-display { font-size: 36px; } .header h1 { font-size: 24px; } }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: #f8fafc; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .header { background: linear-gradient(135deg, #0D8082 0%, #0a6365 100%); color: white; padding: 60px 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(13, 128, 130, 0.3); }
+        .logo { font-size: 56px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 12px; opacity: 0.95; }
+        .header p { font-size: 18px; opacity: 0.9; max-width: 700px; }
+        .mission { background: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; border-left: 6px solid #ff2065; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .mission h2 { color: #ff2065; font-size: 24px; margin-bottom: 16px; font-weight: 700; }
+        .mission p { font-size: 17px; line-height: 1.7; color: #4A5568; }
+        .mission strong { color: #1A202C; }
+        .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .section-title { font-size: 32px; font-weight: 900; color: #1A202C; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+        .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; flex-shrink: 0; }
+        .stats-grid, .template-grid, .hierarchy-grid, .dimension-grid, .color-grid, .example-grid { display: grid; gap: 24px; margin-top: 32px; }
+        .stats-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .template-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .hierarchy-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .dimension-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .color-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .stat-card { background: #f8fafc; padding: 24px; border-radius: 12px; border: 2px solid #e2e8f0; }
+        .stat-value { font-size: 48px; font-weight: 900; color: #0D8082; margin-bottom: 8px; }
+        .stat-label { font-size: 16px; color: #4A5568; line-height: 1.5; }
+        .template-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
+        .template-card .hierarchy { margin-top: auto; font-size: 14px; color: #4A5568; line-height: 1.8; }
+        .template-icon { font-size: 48px; margin-bottom: 16px; display: block; }
+        .template-card h3 { font-size: 22px; font-weight: 700; color: #0D8082; margin-bottom: 12px; }
+        .template-card .use-when { background: #e0f7fa; padding: 12px; border-radius: 8px; font-size: 14px; color: #0D8082; margin-bottom: 12px; font-weight: 600; }
+        .hierarchy-card { border-radius: 12px; padding: 24px; border: 3px solid; }
+        .critical { border-color: #ff2065; background: #fff5f7; }
+        .important { border-color: #f59e0b; background: #fffbeb; }
+        .priority-badge { display: inline-block; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .critical .priority-badge { background: #ff2065; color: white; }
+        .important .priority-badge { background: #f59e0b; color: white; }
+        .hierarchy-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
+        /* ADDED FONT-SPEC CLASS */
+        .font-spec { background: white; border-radius: 8px; padding: 12px; margin-top: 12px; font-weight: 700; font-size: 16px; text-align: center; color: #1A202C; border: 2px solid #e2e8f0;}
+        .dimension-card { background: linear-gradient(135deg, #1A202C 0%, #2d3748 100%); color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+        .dimension-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0D8082; }
+        .dimension-size { font-size: 32px; font-weight: 900; color: white; margin-bottom: 12px; font-family: 'Courier New', monospace; }
+        .dimension-card .detail { font-size: 14px; opacity: 0.9; margin: 8px 0; padding-left: 20px; position: relative; }
+        .dimension-card .detail::before { content: '→'; position: absolute; left: 0; color: #0D8082; font-weight: bold; }
+        .color-card { text-align: center; }
+        .color-swatch { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .color-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: #1A202C; }
+        .color-hex { font-family: 'Courier New', monospace; font-size: 14px; color: #4A5568; font-weight: 600; }
+        .color-use { margin-top: 12px; font-size: 13px; color: #0D8082; font-weight: 600; line-height: 1.6; }
+        .example-banner { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; }
+        .example-banner .deal-type { font-weight: 700; color: #0D8082; margin-bottom: 8px; }
+        .example-banner h4 { font-size: 24px; font-weight: 900; color: #1A202C; }
+        .example-banner .price-or-offer { font-size: 40px; font-weight: 900; color: #ff2065; margin: 12px 0; }
+        .example-banner .details { font-size: 16px; color: #4A5568; }
+        .example-banner .cta-button { display: inline-block; background: #0D8082; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 700; margin-top: 16px; }
+        .checklist { background: #f0f9ff; padding: 32px; border-radius: 12px; border-left: 6px solid #0D8082; }
+        .checklist h3 { color: #0D8082; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .checklist ul { list-style: none; padding: 0; }
+        .checklist li { padding: 12px 0 12px 32px; position: relative; font-size: 16px; line-height: 1.6; color: #1A202C; }
+        .checklist li::before { content: '✓'; position: absolute; left: 0; color: #0D8082; font-weight: 900; font-size: 20px; }
+        .checklist li strong { color: #0D8082; }
+        .prompt-box-container { margin-top: 24px; position: relative; }
+        .prompt-box { background: #0a0f1a; color: #e2e8f0; padding: 24px; border-radius: 12px; border: 2px solid #0D8082; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; }
+        .prompt-box strong { color: #f59e0b; font-weight: bold; }
+        .copy-btn { position: absolute; top: 16px; right: 16px; background: #0D8082; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif; transition: background-color 0.2s ease; }
+        .copy-btn:hover { background: #0a6365; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo-display">MIAMILOTS</div>
-            <h1>Wholesale & Liquidation Platform Design Guide</h1>
-            <p>This is the definitive formula for creating high-conversion visuals. This guide is built on our most successful campaigns and validated by our own user analytics.</p>
-        </div>
+<div class="container">
 
-        <div class="section">
-            <h2 class="section-title">The B2B Reseller Mindset</h2>
-            <div class="text-block" style="background: #e8f5e8; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745;">
-                <strong>The 3-Second Rule:</strong> A busy reseller must be able to spot profit potential, key dates, and brand names within 3 seconds. Everything else is secondary. Our creative must be ruthlessly optimized for this behavior.
+    <div class="header">
+        <div class="logo">MIAMILOTS</div>
+        <h1>Wholesale & Liquidation Design Guide</h1>
+        <p>This is the definitive formula for creating high-conversion sales tools for our professional resellers. This guide is built on our most successful campaigns and validated by our own user analytics.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">1</span> The Data Behind Our Rules: Why This Works</h2>
+        <p style="font-size: 17px; color: #4A5568;">These are not just opinions. Our design principles are a direct reflection of how our best customers behave on our site. Our email subscribers are our most valuable audience, and their data tells a clear story:</p>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value">485</div><div class="stat-label">Actions per user from our email list—nearly <strong>5x higher engagement</strong> than organic visitors. They are power users.</div></div>
+            <div class="stat-card"><div class="stat-value">87</div><div class="stat-label">Pages viewed on average by an email visitor—almost <strong>7x more research</strong>. They dig deep for deals and data.</div></div>
+            <div class="stat-card"><div class="stat-value">+45%</div><div class="stat-label">Higher CTR when a promo includes a specific <strong>Reason/Qualifier</strong> like "1s & 2s" or "First Order Discount."</div></div>
+            <div class="stat-card"><div class="stat-value">+40%</div><div class="stat-label">Engagement on unique lots when using a <strong>"Make an Offer" CTA</strong> vs. a standard "View Product" button.</div></div>
+        </div>
+    </div>
+
+    <div class="mission">
+        <h2>🎯 The 3-Second Deal Rule</h2>
+        <p>Our data proves our best customers are hunters, not browsers. You have 3 seconds to communicate the core opportunity. Your design must instantly answer:</p>
+        <p style="margin-top: 16px; padding-left: 20px; border-left: 4px solid #ff2065; font-weight: 600;">
+            1. What is the <strong>DEAL STRUCTURE?</strong> (Fixed Price, Promo, or Negotiation?)<br>
+            2. What is the <strong>PRODUCT?</strong> (Brand or Category?)<br>
+            3. What is the <strong>SCALE?</strong> (Lot Size or Type?)
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">2</span> The 4 Campaign Blueprints</h2>
+        <p style="font-size: 17px; color: #4A5568;">Every campaign you create will be for one of these four scenarios. Start with the correct blueprint.</p>
+        <div class="template-grid">
+            <div class="template-card"><span class="template-icon">📦</span><h3>A: Standard Lot</h3><div class="use-when">Your everyday inventory. Price is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. Price (per unit/total)<br>2. Brand/Category<br>3. Lot Size<br>4. Logistics (FBA/Warehouse)</div></div>
+            <div class="template-card"><span class="template-icon">🔥</span><h3>B: Promotion</h3><div class="use-when">"70% OFF 1s & 2s," "$5 Blowout," "First Order Discount." The offer is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The Offer ("70% OFF")<br>2. The Category ("All Shoes")<br>3. The Reason ("1s & 2s")<br>4. CTA: "Shop the Sale"</div></div>
+            <div class="template-card"><span class="template-icon">🤝</span><h3>C: Negotiable Lot</h3><div class="use-when">Price is flexible. The invitation is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. "MAKE AN OFFER"<br>2. Brand/Category<br>3. Lot Size<br>4. CTA: "Negotiate Now"</div></div>
+            <div class="template-card"><span class="template-icon">📢</span><h3>D: Announcement</h3><div class="use-when">New features, services, or important updates. The news is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The News ("Filter Now Live")<br>2. The Benefit ("Find Steady Supply")<br>3. The Action ("Try It Now")</div></div>
+        </div>
+    </div>
+
+    <!-- REVISED SECTION 3 -->
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">3</span> The Deal Hierarchy Law & Font System</h2>
+        <p style="font-size: 17px; color: #4A5568;">The visual importance must match the deal structure. Use these font sizes as your starting point for all desktop banners to ensure the hierarchy is clear and consistent.</p>
+        <div class="hierarchy-grid">
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#1: THE HERO</span>
+                <h3>📢 Deal Type & Value</h3>
+                <div class="usage">The main event. Must be the largest element on the banner.</div>
+                <div class="font-spec">48px - 72px</div>
+            </div>
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#2: THE SUBJECT</span>
+                <h3>🏷️ Brand & Category</h3>
+                <div class="usage">What is it? Must be instantly identifiable.</div>
+                <div class="font-spec">28px - 36px</div>
+            </div>
+            <div class="hierarchy-card critical">
+                <span class="priority-badge">#3: THE SCALE</span>
+                <h3>📊 Lot Size</h3>
+                <div class="usage">Defines the investment size and scope of the deal.</div>
+                <div class="font-spec">22px - 28px</div>
+            </div>
+            <div class="hierarchy-card important">
+                <span class="priority-badge">SUPPORTING INFO</span>
+                <h3>🎯 Reason / Qualifier</h3>
+                <div class="usage">Adds context and urgency ("1s & 2s," "NJ Overload").</div>
+                <div class="font-spec">18px - 22px</div>
+            </div>
+            <div class="hierarchy-card important">
+                <span class="priority-badge">SUPPORTING INFO</span>
+                <h3>🚚 Logistics</h3>
+                <div class="usage">Critical decision factor. Often best presented as a badge.</div>
+                <div class="font-spec">16px - 20px</div>
             </div>
         </div>
+    </div>
 
-        <div class="section">
-            <h2 class="section-title">Before You Design: Answer These 3 Questions</h2>
-            <div class="text-block">Our email subscribers are our most active audience, and their data tells a clear story. Before creating any banner or email, you must have the answers to these questions:</div>
-            <div class="checklist" style="border-left-color: #f0ad4e;">
-                <h4 style="color: #f0ad4e;">The Core Creative Brief</h4>
-                <ol style="list-style-type: decimal; padding-left: 20px; font-size: 16px;">
-                    <li style="padding-left: 10px; margin-bottom: 15px;"><strong>What is the DEAL TYPE?</strong> (e.g., Fixed Price, Discount Promotion, or a Negotiation Campaign?)</li>
-                    <li style="padding-left: 10px; margin-bottom: 15px;"><strong>What is the MAIN TARGET?</strong> (e.g., A specific Brand like *Apple*, or a broader Category like *Footwear*?)</li>
-                    <li style="padding-left: 10px; margin-bottom: 15px;"><strong>What is the PRODUCT?</strong> (e.g., A collection of individual products, a specific Lot, or a website feature like *Stock Radar*?)</li>
-                </ol>
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">4</span> The Designer's Toolbox</h2>
+        <p style="font-size: 17px; color: #4A5568;">Use these exact specifications for consistency and performance.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 32px;">A: The 4 Core Canvases</h3>
+        <div class="dimension-grid">
+            <div class="dimension-card"><h3>🖥️ Desktop Skyline</h3><div class="dimension-size">1300 × 275px</div><div class="detail">Homepage hero banner</div><div class="detail">Export: JPG, max 200KB</div></div>
+            <div class="dimension-card"><h3>📱 Mobile/WhatsApp</h3><div class="dimension-size">500 × 500px</div><div class="detail">Square for broadcasts</div><div class="detail">Export: PNG, max 150KB</div></div>
+            <div class="dimension-card"><h3>📦 Feature Boxes</h3><div class="dimension-size">500 × 500px</div><div class="detail">Mid-page category highlights</div><div class="detail">Export: PNG, max 100KB each</div></div>
+            <div class="dimension-card"><h3>📧 Email Header</h3><div class="dimension-size">600 × 200px</div><div class="detail">Single column, mobile-safe</div><div class="detail">Export: JPG, max 120KB</div></div>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px;">B: The 2+4 Color System</h3>
+        <div class="color-grid">
+            <div class="color-card"><div class="color-swatch" style="background: #0D8082;"></div><div class="color-name">Primary Teal</div><div class="color-hex">#0D8082</div><div class="color-use"><strong>JOB: Get Clicks</strong><br>Use for CTAs & Prices. Never for backgrounds.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #ff2065;"></div><div class="color-name">Accent Pink</div><div class="color-hex">#ff2065</div><div class="color-use"><strong>JOB: Create Urgency</strong><br>Use for Discounts & Sales. Never for body text.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #1A202C;"></div><div class="color-name">Dark Charcoal</div><div class="color-hex">#1A202C</div><div class="color-use"><strong>JOB: Be Readable</strong><br>Use for all main text and headlines.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #4A5568;"></div><div class="color-name">Medium Gray</div><div class="color-hex">#4A5568</div><div class="color-use"><strong>JOB: Be Quiet</strong><br>Use for secondary info like dates or details.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #E0F7FA;"></div><div class="color-name">Light Teal</div><div class="color-hex">#E0F7FA</div><div class="color-use"><strong>JOB: Add Highlight</strong><br>Use for background sections and info boxes.</div></div>
+            <div class="color-card"><div class="color-swatch" style="background: #F8FAFC; border: 2px solid #e2e8f0;"></div><div class="color-name">Light Gray BG</div><div class="color-hex">#F8FAFC</div><div class="color-use"><strong>JOB: Create Space</strong><br>Use for all main page and card backgrounds.</div></div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">5</span> Putting It All Together: Real Examples</h2>
+         <p style="font-size: 17px; color: #4A5568;">Notice how the hero element and CTA change for each deal structure.</p>
+        <div class="example-grid">
+            <div class="example-banner">
+                <div class="deal-type">Standard Lot</div>
+                <h4>Lot of 50 Vtech Toys</h4>
+                <div class="price-or-offer">$5.00 / unit</div>
+                <div class="details">Ships from Miami • FBA Eligible</div>
+                <a href="#" class="cta-button">View Lot</a>
+            </div>
+            <div class="example-banner">
+                <div class="deal-type">Promotion</div>
+                <h4>On Remaining 1s & 2s</h4>
+                <div class="price-or-offer">70% OFF</div>
+                <div class="details">All High Quality Brands</div>
+                <a href="#" class="cta-button">Shop Clearance</a>
+            </div>
+            <div class="example-banner">
+                <div class="deal-type">Negotiable Lot</div>
+                <h4>NJ Warehouse Overload</h4>
+                <div class="price-or-offer">MAKE AN OFFER</div>
+                <div class="details">On All Electronics Lots</div>
+                <a href="#" class="cta-button">Start Negotiating</a>
             </div>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">The 2+4 Color System</h2>
-             <div class="text-block">Our system is built on 2 primary action colors and 4 versatile neutral colors. This creates a clean, consistent, and high-contrast experience that makes critical information easy to scan.</div>
-            <h3 class="section-subtitle">Quick Reference HEX Codes</h3>
-            <div class="color-palette">
-                <div class="color-swatch"><div class="color-circle" style="background-color: #0D8082;"></div><div class="color-name">Primary Teal</div><div class="color-hex">#0D8082</div></div>
-                <div class="color-swatch"><div class="color-circle" style="background-color: #ff2065;"></div><div class="color-name">Accent Pink</div><div class="color-hex">#ff2065</div></div>
-                <div class="color-swatch"><div class="color-circle" style="background-color: #E0F7FA;"></div><div class="color-name">Light Teal</div><div class="color-hex">#E0F7FA</div></div>
-                <div class="color-swatch"><div class="color-circle" style="background-color: #1A202C;"></div><div class="color-name">Dark Charcoal</div><div class="color-hex">#1A202C</div></div>
-                <div class="color-swatch"><div class="color-circle" style="background-color: #4A5568;"></div><div class="color-name">Medium Gray</div><div class="color-hex">#4A5568</div></div>
-                <div class="color-swatch"><div class="color-circle" style="background-color: #F8FAFC;"></div><div class="color-name">Light Gray BG</div><div class="color-hex">#F8FAFC</div></div>
-            </div>
+    </div>
+    
+    <div class="section">
+        <h2 class="section-title"><span class="section-number">6</span> The Quality Control Process</h2>
+        <p style="font-size: 17px; color: #4A5568;">Follow these two steps before submitting any creative for review.</p>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 32px;">Step 1: The 5-Point Pre-Flight Check</h3>
+        <div class="checklist">
+            <ul>
+                <li>Is the <strong>Campaign Blueprint</strong> (Standard, Promo, etc.) instantly clear?</li>
+                <li>Does the design obey the <strong>Deal Hierarchy & Font System</strong> for that blueprint?</li>
+                <li>Is the <strong>Reason/Qualifier</strong> (e.g., "1s & 2s") clear and effective?</li>
+                <li>Is the <strong>Call-to-Action</strong> correct for the deal type? ("View Lot" vs. "Make Offer")</li>
+                <li>Is every word, number, and brand name <strong>100% accurate</strong> and spell-checked?</li>
+            </ul>
         </div>
-        
-        <div class="section">
-            <h2 class="section-title">Information Hierarchy: What MUST Be Scannable</h2>
-            <div class="hierarchy-grid">
-                <div class="hierarchy-card critical"><div class="priority">CRITICAL</div><h3>Financial Data</h3><div class="size">Minimum 18px, Bold, High Contrast</div><div class="usage">Prices, discounts (%), profit margins, cost per unit, total value.</div><div class="example"><div class="price-huge">$299</div><div class="discount-badge">65% OFF</div></div></div>
-                <div class="hierarchy-card critical"><div class="priority">CRITICAL</div><h3>Brand Names</h3><div class="size">Minimum 16px, Bold, Never Abbreviated</div><div class="usage">Full brand names - Apple not "Apl", Nike not "Nke"</div><div class="example"><div class="brand-name">Samsung Galaxy</div><div class="brand-name">Microsoft Surface</div></div></div>
-                <div class="hierarchy-card critical"><div class="priority">CRITICAL</div><h3>Quantities & Units</h3><div class="size">Minimum 16px, Bold, Clear Units</div><div class="usage">50 pcs, 100 units, 25 pallets, per piece pricing</div><div class="example"><div class="quantity">250 Units Available</div><div class="quantity">$12.50 per piece</div></div></div>
-                <div class="hierarchy-card important"><div class="priority">IMPORTANT</div><h3>Critical Dates</h3><div class="size">Minimum 16px, Bold When Time-Sensitive</div><div class="usage">Sale ends, payment due, shipping dates, availability windows</div><div class="example"><div class="date-critical">Ends Monday 23/09</div><div style="font-size: 16px; color: #333;">Ships within 48 hours</div></div></div>
-                <div class="hierarchy-card important"><div class="priority">IMPORTANT</div><h3>Product Categories</h3><div class="size">Minimum 14px, Medium Weight</div><div class="usage">Electronics, Fashion, Home & Garden - helps quick filtering</div><div class="example"><div style="font-size: 16px; font-weight: 500; color: #0D8082;">Electronics & Appliances</div><div style="font-size: 16px; font-weight: 500; color: #0D8082;">Clothing & Fashion</div></div></div>
-                <div class="hierarchy-card flexible"><div class="priority">FLEXIBLE</div><h3>Campaign Names</h3><div class="size">12px+, Regular Weight, Decorative OK</div><div class="usage">C: Negotiation, Summer Promo, Flash Sale - nice to have but not critical</div><div class="example"><div class="campaign-name">C: Negotiation Event</div><div class="campaign-name">New Jersey Warehouse Liquidation</div></div></div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h2 class="section-title">Practical Application: Banners & Emails</h2>
-            
-            <h3 class="section-subtitle">Technical File Requirements</h3>
-            <div class="do-dont">
-                <div class="do-dont-item do" style="background: #f8f9fa; border-color: #ddd;"><h4 style="color: #111;">✓ Website Banners</h4><p>All banners for the website must be exported as **WEBP** and optimized to be **under 100kb**.</p></div>
-                <div class="do-dont-item do" style="background: #f8f9fa; border-color: #ddd;"><h4 style="color: #111;">✓ Email & WhatsApp Banners</h4><p>All banners for emails and social media must be exported as **PNG**. Follow the specified dimensions.</p></div>
-            </div>
+        <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px;">Step 2: LLM-Powered Self-Assessment</h3>
+        <div class="prompt-box-container">
+            <button class="copy-btn" id="copy-button-main">Copy</button>
+            <pre class="prompt-box" id="prompt-text-main">
+You are a Brand Guardian for "Miamilots," a B2B wholesale and liquidation marketplace. Your task is to ruthlessly evaluate creative content against our **Deal-Driven Design Principles**, which are based on our analytics showing that email users are our most engaged, high-intent audience.
 
-            <h3 class="section-subtitle">Official Banner Dimensions</h3>
-            <div class="do-dont" style="grid-template-columns: 1fr;">
-                <div class="do-dont-item do" style="background: #f8f9fa; border-color: #ddd;">
-                    <h4 style="color: #111;">✓ Internal Banner Sizes</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li>• <strong>Desktop Skyline Banner:</strong> 1300 x 275 px</li>
-                        <li>• <strong>Mobile & WhatsApp Banner:</strong> 500 x 500 px (Square)</li>
-                        <li>• <strong>Feature Box Banners (Set of 3):</strong> 500 x 500 px (Square)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <h2 class="section-title">LLM-Powered Self-Assessment</h2>
-            <div class="text-block">To ensure your work meets these data-driven standards, copy the prompt below and paste it into an AI tool. Then, add your design description or ad copy at the end for an instant check.</div>
-            <div class="prompt-box">
-You are a Brand Guardian for "Miamilots," a B2B marketplace for professional resellers. Your task is to evaluate the provided creative content against the Miamilots **Enhanced Readability & Message Hierarchy Rules**.
+**Core Principle:** A professional reseller must understand the deal structure and profit opportunity in 3 seconds.
 
-**Core Principle:** A busy reseller must spot the profit opportunity in 3 seconds. Your analysis must be ruthless in enforcing this rule.
+**Evaluation Process:**
 
-**Hierarchy Rules to Enforce (from most to least important):**
+**Step 1: Identify the Campaign Blueprint.** First, state if the content represents a (A) Standard Lot, (B) Promotion, (C) Negotiable Lot, or (D) Announcement.
 
-1.  **CRITICAL (Must be largest & highest contrast):**
-    *   **Financial Data:** Prices, discounts (e.g., "70% OFF").
-    *   **Brand Names:** Full, never abbreviated.
-    *   **Quantities:** Clear units (e.g., "50 pcs," "$12/unit").
+**Step 2: Enforce the Hierarchy for that Blueprint.**
+*   **For Standard Lots:** The hero must be the **Price**.
+*   **For Promotions:** The hero must be **The Offer** (e.g., "70% OFF").
+*   **For Negotiable Lots:** The hero must be the **Invitation to Negotiate** (e.g., "MAKE AN OFFER").
+*   **For Announcements:** The hero must be **The News** (e.g., "New Filter Live").
 
-2.  **IMPORTANT (Must be very clear & easy to find):**
-    *   **Critical Dates:** "Ends Monday," "Ships in 48 hours."
-    *   **Product Categories:** "Electronics," "Fashion."
-
-3.  **FLEXIBLE (Can be smaller or more decorative):**
-    *   **Campaign Names:** "C: Negotiation," "Summer Sale."
-    *   **General Descriptions.**
-
-**Evaluation Checklist:**
-
-1.  **Hierarchy Violation:** Does a "Flexible" element (like a campaign name) visually overpower a "Critical" element (like the price or brand name)?
-2.  **B2B Focus:** Is the language focused on profit, numbers, and efficiency, or does it sound like retail copy (e.g., "discover the magic of..." vs. "source high-margin inventory...")?
-3.  **3-Second Scan Test:** Based on the description, could a reseller understand the Brand, the Price/Discount, and the Quantity in under 3 seconds?
+**Step 3: Run the Checklist.**
+1.  **Hierarchy Violation:** Does the visual emphasis violate the rules for its identified blueprint?
+2.  **CTA Mismatch:** Is the Call-to-Action appropriate? ("Shop Now" is a VIOLATION for a negotiable deal. "Make an Offer" is a VIOLATION for a fixed-price promotion).
+3.  **Missing Context:** Does the design fail to include the **Reason/Qualifier** (e.g., "1s & 2s," "First Order Discount") when it's a key part of the promotion?
+4.  **Clarity vs. Cleverness:** Does a catchy but vague headline (e.g., "Drop It Like It's HOT") obscure the actual deal structure (e.g., NEGOTIATIONS)? The deal must always be clearer than the slogan.
 
 **Your Response Format:**
-Provide a "Hierarchy Compliance Score" out of 100. Then, give a bulleted list of "Violations" and "Recommendations for Improvement." Be direct and actionable.
+First, state the **Campaign Blueprint**. Then, provide a **Hierarchy Compliance Score** (out of 100). Finally, list any **Violations** and actionable **Recommendations**.
 
 ---
 
 **Now, please evaluate the following content:**
 
-[**PASTE YOUR CONTENT HERE - e.g., "Banner design: 'Summer Clearance' in huge letters at top. Below, a small image of a laptop. Text at bottom says 'Apple MacBooks, 25 units, $899 each.'**]
-            </div>
+<strong>[PASTE YOUR CONTENT HERE]</strong></pre>
         </div>
-
     </div>
+
+</div>
+<script>
+    const mainCopyButton = document.getElementById('copy-button-main');
+    const mainPromptText = document.getElementById('prompt-text-main');
+    mainCopyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(mainPromptText.textContent).then(() => {
+            mainCopyButton.textContent = 'Copied!';
+            setTimeout(() => { mainCopyButton.textContent = 'Copy'; }, 2000);
+        });
+    });
+</script>
 </body>
 </html>
