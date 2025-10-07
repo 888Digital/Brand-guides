@@ -20,16 +20,11 @@
         .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         .section-title { font-size: 32px; font-weight: 900; color: #1A202C; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
         .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; flex-shrink: 0; }
-        .stats-grid, .template-grid, .hierarchy-grid, .dimension-grid, .color-grid, .example-grid { display: grid; gap: 24px; margin-top: 32px; }
-        .stats-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .template-grid, .hierarchy-grid, .dimension-grid, .color-grid { display: grid; gap: 24px; margin-top: 32px; }
         .template-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .hierarchy-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .dimension-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .color-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-        .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .stat-card { background: #f8fafc; padding: 24px; border-radius: 12px; border: 2px solid #e2e8f0; }
-        .stat-value { font-size: 48px; font-weight: 900; color: #0D8082; margin-bottom: 8px; }
-        .stat-label { font-size: 16px; color: #4A5568; line-height: 1.5; }
         .template-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
         .template-card .hierarchy { margin-top: auto; font-size: 14px; color: #4A5568; line-height: 1.8; }
         .template-icon { font-size: 48px; margin-bottom: 16px; display: block; }
@@ -53,12 +48,6 @@
         .color-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: #1A202C; }
         .color-hex { font-family: 'Courier New', monospace; font-size: 14px; color: #4A5568; font-weight: 600; }
         .color-use { margin-top: 12px; font-size: 13px; color: #0D8082; font-weight: 600; line-height: 1.6; }
-        .example-banner { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; }
-        .example-banner .deal-type { font-weight: 700; color: #0D8082; margin-bottom: 8px; }
-        .example-banner h4 { font-size: 24px; font-weight: 900; color: #1A202C; }
-        .example-banner .price-or-offer { font-size: 40px; font-weight: 900; color: #ff2065; margin: 12px 0; }
-        .example-banner .details { font-size: 16px; color: #4A5568; }
-        .example-banner .cta-button { display: inline-block; background: #0D8082; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: 700; margin-top: 16px; }
         .checklist { background: #f0f9ff; padding: 32px; border-radius: 12px; border-left: 6px solid #0D8082; }
         .checklist h3 { color: #0D8082; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
         .checklist ul { list-style: none; padding: 0; }
@@ -93,7 +82,7 @@
 
     <div class="section">
         <h2 class="section-title"><span class="section-number">1</span> The 2+4 Color System</h2>
-        <p style="font-size: 17px; color: #4A5568;">Our system is built on **2** primary action colors and **4** versatile neutral colors. This creates a clean, consistent, and high-contrast experience that makes critical information easy to scan. we use this in the platform inspirted by the miamivice colors but feel free eo create consitent messaging across verticals.</p>
+        <p style="font-size: 17px; color: #4A5568;">Our system is built on **2** primary action colors and **4** versatile neutral colors. This creates a clean, consistent, and high-contrast experience that makes critical information easy to scan. We use this on the platform, inspired by "Miami Vice" colors, but feel free to create consistent messaging across verticals.</p>
         <div class="color-grid">
             <div class="color-card"><div class="color-swatch" style="background: #0D8082;"></div><div class="color-name">Primary Teal</div><div class="color-hex">#0D8082</div><div class="color-use"><strong>JOB: Get Clicks</strong><br>Use for CTAs & Prices.</div></div>
             <div class="color-card"><div class="color-swatch" style="background: #ff2065;"></div><div class="color-name">Accent Pink</div><div class="color-hex">#ff2065</div><div class="color-use"><strong>JOB: Create Urgency</strong><br>Use for Discounts & Sales.</div></div>
@@ -109,9 +98,9 @@
         <p style="font-size: 17px; color: #4A5568;">Use these exact specifications for consistency and performance.</p>
         <div class="dimension-grid">
             <div class="dimension-card"><h3>🖥️ Desktop Skyline</h3><div class="dimension-size">1300 × 275px</div><div class="detail">Homepage hero banner</div><div class="detail">Export: **WEBP**, max 100KB</div></div>
-            <div class="dimension-card"><h3>📱 Mobile & WhatsApp</h3><div class="dimension-size">500 × 500px</div><div class="detail">Square for broadcasts</div><div class="detail">Export: **WEBP**, max 100KB</div></div>
+            <div class="dimension-card"><h3>📱 Mobile & WhatsApp</h3><div class="dimension-size">500 × 500px</div><div class="detail">Square for broadcasts</div><div class="detail">Export: **PNG**, max 150KB</div></div>
             <div class="dimension-card"><h3>📦 Feature Boxes</h3><div class="dimension-size">500 × 500px</div><div class="detail">Mid-page category highlights</div><div class="detail">Export: **WEBP**, max 100KB each</div></div>
-            <div class="dimension-card"><h3>📧 Email Header</h3><div class="dimension-size">600 × 200px</div><div class="detail">Single column, mobile-safe</div><div class="detail">Export: **PNG**, max 120KB</div></div>
+            <div class="dimension-card"><h3>📧 Email Banner</h3><div class="dimension-size">600px width</div><div class="detail">Single-column, mobile-first design</div><div class="detail">Export: **PNG**, max 120KB</div></div>
         </div>
     </div>
 
@@ -122,7 +111,7 @@
             <div class="hierarchy-card critical"><span class="priority-badge">#1: THE HERO</span><h3>📢 Deal Type & Value</h3><div class="usage">The main event. Must be the largest element on the banner.</div><div class="font-spec">48px - 72px</div></div>
             <div class="hierarchy-card critical"><span class="priority-badge">#2: THE SUBJECT</span><h3>🏷️ Brand & Category</h3><div class="usage">What is it? Must be instantly identifiable.</div><div class="font-spec">28px - 36px</div></div>
             <div class="hierarchy-card critical"><span class="priority-badge">#3: THE SCALE</span><h3>📊 Size</h3><div class="usage">Defines the investment size (qty, lots) - scope of the deal.</div><div class="font-spec">22px - 28px</div></div>
-            <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🎯 Reason / Qualifier</h3><div class="usage">Adds context and urgency ("FBA", "NJ Overload", "Lockal Pickup", "Black Friday").</div><div class="font-spec">18px - 22px</div></div>
+            <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🎯 Reason / Qualifier</h3><div class="usage">Adds context and urgency ("FBA", "NJ Overload", "Local Pickup", "Black Friday").</div><div class="font-spec">18px - 22px</div></div>
         </div>
     </div>
     
