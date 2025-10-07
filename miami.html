@@ -9,28 +9,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: #f8fafc; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .header { background: linear-gradient135deg, #0D8082 0%, #0a6365 100%; color: white; padding: 60px 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba13, 128, 130, 0.3; text-align: center; }
+        .header { background: linear-gradient(135deg, #0D8082 0%, #0a6365 100%); color: white; padding: 60px 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(13, 128, 130, 0.3); text-align: center; }
         .logo { font-size: 56px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
         .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 12px; opacity: 0.95; }
         .header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: auto; }
-        .mission { background: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; border-left: 6px solid #ff2065; box-shadow: 0 4px 20px rgba0,0,0,0.06; }
+        .mission { background: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; border-left: 6px solid #ff2065; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         .mission h2 { color: #ff2065; font-size: 24px; margin-bottom: 16px; font-weight: 700; }
         .mission p { font-size: 17px; line-height: 1.7; color: #4A5568; }
         .mission strong { color: #1A202C; }
-        .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba0,0,0,0.06; }
+        .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
         .section-title { font-size: 32px; font-weight: 900; color: #1A202C; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
         .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; flex-shrink: 0; }
         .stats-grid, .template-grid, .hierarchy-grid, .dimension-grid, .color-grid, .dont-grid { display: grid; gap: 24px; margin-top: 32px; }
-        .stats-grid { grid-template-columns: repeatauto-fit, minmax250px, 1fr; }
-        .template-grid { grid-template-columns: repeatauto-fit, minmax280px, 1fr; }
-        .hierarchy-grid { grid-template-columns: repeatauto-fit, minmax280px, 1fr; }
-        .dimension-grid { grid-template-columns: repeatauto-fit, minmax280px, 1fr; }
-        .color-grid { grid-template-columns: repeatauto-fill, minmax200px, 1fr; }
-        .dont-grid { grid-template-columns: repeatauto-fit, minmax300px, 1fr; }
+        .stats-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .template-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .hierarchy-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .dimension-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .color-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        .dont-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .stat-card { background: #f8fafc; padding: 24px; border-radius: 12px; border: 2px solid #e2e8f0; }
         .stat-value { font-size: 48px; font-weight: 900; color: #0D8082; margin-bottom: 8px; }
         .stat-label { font-size: 16px; color: #4A5568; line-height: 1.5; }
-        .template-card { background: linear-gradient135deg, #f8fafc 0%, #ffffff 100%; border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
+        .template-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
         .template-card .hierarchy { margin-top: auto; font-size: 14px; color: #4A5568; line-height: 1.8; }
         .template-icon { font-size: 48px; margin-bottom: 16px; display: block; }
         .template-card h3 { font-size: 22px; font-weight: 700; color: #0D8082; margin-bottom: 12px; }
@@ -43,13 +43,13 @@
         .important .priority-badge { background: #f59e0b; color: white; }
         .hierarchy-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
         .font-spec { background: white; border-radius: 8px; padding: 12px; margin-top: 12px; font-weight: 700; font-size: 16px; text-align: center; color: #1A202C; border: 2px solid #e2e8f0;}
-        .dimension-card { background: linear-gradient135deg, #1A202C 0%, #2d3748 100%; color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba0,0,0,0.15; }
+        .dimension-card { background: linear-gradient(135deg, #1A202C 0%, #2d3748 100%); color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
         .dimension-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0D8082; }
         .dimension-size { font-size: 32px; font-weight: 900; color: white; margin-bottom: 12px; font-family: 'Courier New', monospace; }
         .dimension-card .detail { font-size: 14px; opacity: 0.9; margin: 8px 0; padding-left: 20px; position: relative; }
         .dimension-card .detail::before { content: '→'; position: absolute; left: 0; color: #0D8082; font-weight: bold; }
         .color-card { text-align: center; }
-        .color-swatch { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 8px 30px rgba0,0,0,0.1; }
+        .color-swatch { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
         .color-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: #1A202C; }
         .color-hex { font-family: 'Courier New', monospace; font-size: 14px; color: #4A5568; font-weight: 600; }
         .color-use { margin-top: 12px; font-size: 13px; color: #0D8082; font-weight: 600; line-height: 1.6; }
@@ -75,7 +75,7 @@
         .do h4, .dont h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
         .do ul, .dont ul { list-style: none; padding-left: 0; font-size: 15px; color: #4A5568; }
         .do li, .dont li { margin-bottom: 8px; }
-        .do li code, .dont li code { background: rgba0,0,0,0.05; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-weight: 600; }
+        .do li code, .dont li code { background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-weight: 600; }
         .do li code { color: #28a745; }
         .dont li code { color: #d9534f; }
     </style>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="section">
-        <h2 class="section-title"><span class="section-number">2</span> The 4 Campaign Blueprints</h2>
+        <h2 class="section-title"><span class="section-number">2</span> The 3 Campaign Blueprints</h2>
         <p style="font-size: 17px; color: #4A5568;">Every campaign you create will be for one of these three scenarios. Start with the correct blueprint.</p>
         <div class="template-grid">
             <div class="template-card"><span class="template-icon">🔥</span><h3>A: Promotion</h3><div class="use-when">"70% OFF 1s & 2s," "$5 Blowout," "First Order Discount." The offer is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The Offer "70% OFF"<br>2. The Category "All Shoes"<br>3. The Reason "1s & 2s"<br>4. CTA: "Shop the Sale"</div></div>
@@ -132,7 +132,7 @@
             <div class="color-card"><div class="color-swatch" style="background: #F8FAFC; border: 2px solid #e2e8f0;"></div><div class="color-name">Light Gray BG</div><div class="color-hex">#F8FAFC</div><div class="color-use"><strong>JOB: Create Space</strong><br>Use for all main page and card backgrounds.</div></div>
         </div>
     </div>
-
+    
     <div class="section">
         <h2 class="section-title"><span class="section-number">4</span> The Designer's Toolbox</h2>
         <p style="font-size: 17px; color: #4A5568;">Use these exact specifications for consistency and performance.</p>
@@ -236,14 +236,14 @@ Now, please evaluate the following content:
 
 </div>
 <script>
-    const mainCopyButton = document.getElementById'copy-button-main';
-    const mainPromptText = document.getElementById'prompt-text-main';
-    mainCopyButton.addEventListener'click',  => {
-        navigator.clipboard.writeTextmainPromptText.textContent.then => {
+    const mainCopyButton = document.getElementById('copy-button-main');
+    const mainPromptText = document.getElementById('prompt-text-main');
+    mainCopyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(mainPromptText.textContent).then(() => {
             mainCopyButton.textContent = 'Copied!';
-            setTimeout => { mainCopyButton.textContent = 'Copy'; }, 2000;
-        };
-    };
+            setTimeout(() => { mainCopyButton.textContent = 'Copy'; }, 2000);
+        });
+    });
 </script>
 </body>
 </html>
