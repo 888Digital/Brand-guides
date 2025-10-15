@@ -1,233 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miamilots Wholesale Design Guide - Final Version</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1A202C; background: #f8fafc; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .header { background: linear-gradient(135deg, #0D8082 0%, #0a6365 100%); color: white; padding: 60px 40px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(13, 128, 130, 0.3); text-align: center; }
-        .logo { font-size: 56px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
-        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 12px; opacity: 0.95; }
-        .header p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: auto; }
-        .mission { background: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; border-left: 6px solid #ff2065; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        .mission h2 { color: #ff2065; font-size: 24px; margin-bottom: 16px; font-weight: 700; }
-        .mission p { font-size: 17px; line-height: 1.7; color: #4A5568; }
-        .mission strong { color: #1A202C; }
-        .section { background: white; padding: 40px; margin-bottom: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        .section-title { font-size: 32px; font-weight: 900; color: #1A202C; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
-        .section-number { background: #0D8082; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; flex-shrink: 0; }
-        .stats-grid, .template-grid, .hierarchy-grid, .dimension-grid, .color-grid, .dont-grid { display: grid; gap: 24px; margin-top: 32px; }
-        .stats-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        .template-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .hierarchy-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .dimension-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .color-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-        .dont-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .stat-card { background: #f8fafc; padding: 24px; border-radius: 12px; border: 2px solid #e2e8f0; }
-        .stat-value { font-size: 48px; font-weight: 900; color: #0D8082; margin-bottom: 8px; }
-        .stat-label { font-size: 16px; color: #4A5568; line-height: 1.5; }
-        .template-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border: 3px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
-        .template-card .hierarchy { margin-top: auto; font-size: 14px; color: #4A5568; line-height: 1.8; }
-        .template-icon { font-size: 48px; margin-bottom: 16px; display: block; }
-        .template-card h3 { font-size: 22px; font-weight: 700; color: #0D8082; margin-bottom: 12px; }
-        .template-card .use-when { background: #e0f7fa; padding: 12px; border-radius: 8px; font-size: 14px; color: #0D8082; margin-bottom: 12px; font-weight: 600; }
-        .hierarchy-card { border-radius: 12px; padding: 24px; border: 3px solid; }
-        .critical { border-color: #ff2065; background: #fff5f7; }
-        .important { border-color: #f59e0b; background: #fffbeb; }
-        .priority-badge { display: inline-block; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-        .critical .priority-badge { background: #ff2065; color: white; }
-        .important .priority-badge { background: #f59e0b; color: white; }
-        .hierarchy-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
-        .font-spec { background: white; border-radius: 8px; padding: 12px; margin-top: 12px; font-weight: 700; font-size: 16px; text-align: center; color: #1A202C; border: 2px solid #e2e8f0;}
-        .dimension-card { background: linear-gradient(135deg, #1A202C 0%, #2d3748 100%); color: white; padding: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-        .dimension-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0D8082; }
-        .dimension-size { font-size: 32px; font-weight: 900; color: white; margin-bottom: 12px; font-family: 'Courier New', monospace; }
-        .dimension-card .detail { font-size: 14px; opacity: 0.9; margin: 8px 0; padding-left: 20px; position: relative; }
-        .dimension-card .detail::before { content: '→'; position: absolute; left: 0; color: #0D8082; font-weight: bold; }
-        .color-card { text-align: center; }
-        .color-swatch { width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-        .color-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: #1A202C; }
-        .color-hex { font-family: 'Courier New', monospace; font-size: 14px; color: #4A5568; font-weight: 600; }
-        .color-use { margin-top: 12px; font-size: 13px; color: #0D8082; font-weight: 600; line-height: 1.6; }
-        .checklist { background: #f0f9ff; padding: 32px; border-radius: 12px; border-left: 6px solid #0D8082; }
-        .checklist h3 { color: #0D8082; font-size: 22px; font-weight: 700; margin-bottom: 16px; }
-        .checklist ul { list-style: none; padding: 0; }
-        .checklist li { padding: 12px 0 12px 32px; position: relative; font-size: 16px; line-height: 1.6; color: #1A202C; }
-        .checklist li::before { content: '✓'; position: absolute; left: 0; color: #0D8082; font-weight: 900; font-size: 20px; }
-        .checklist li strong { color: #0D8082; }
-        .prompt-box-container { margin-top: 24px; position: relative; }
-        .prompt-box { background: #0a0f1a; color: #e2e8f0; padding: 24px; border-radius: 12px; border: 2px solid #0D8082; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word; }
-        .prompt-box strong { color: #f59e0b; font-weight: bold; }
-        .copy-btn { position: absolute; top: 16px; right: 16px; background: #0D8082; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-family: 'Inter', sans-serif; transition: background-color 0.2s ease; }
-        .copy-btn:hover { background: #0a6365; }
-        .dont-card { background: #FFF5F7; border: 2px solid #ff2065; padding: 24px; border-radius: 12px; }
-        .dont-card h3 { font-size: 20px; font-weight: 700; color: #ff2065; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-        .dont-card .why { font-size: 16px; color: #4A5568; line-height: 1.7; }
-        .dont-card .why strong { color: #1A202C; }
-        .do-dont-grid { display: grid; gap: 24px; margin-top: 24px; grid-template-columns: 1fr; }
-        .do, .dont { padding: 20px; border-radius: 8px; }
-        .do { background: #f0fff4; border: 2px solid #28a745; } .do h4 { color: #28a745; }
-        .dont { background: #fff5f5; border: 2px solid #d9534f; } .dont h4 { color: #d9534f; }
-        .do h4, .dont h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-        .do ul, .dont ul { list-style: none; padding-left: 0; font-size: 15px; color: #4A5568; }
-        .do li, .dont li { margin-bottom: 8px; }
-        .do li code, .dont li code { background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-weight: 600; }
-        .do li code { color: #28a745; }
-        .dont li code { color: #d9534f; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executive Summary: Data-Driven SEO Plan to Focus on Revenue-Driving Pages</title>
+  <meta name="description" content="Data-driven SEO strategy to focus indexing on high-revenue pages and languages. Wholesale and liquidation SEO plan prioritizing list pages and main pages in BG, EN, FR while deindexing low-value product pages." />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#ffffff;
+      --ink:#0b1220;
+      --muted:#475569;
+      --brand:#2563eb;
+      --ok:#16a34a;
+      --warn:#f97316;
+      --bad:#e11d48;
+      --accent:#06b6d4;
+      --table-head:#1f2937;
+    }
+    html,body{margin:0;padding:0;background:#f6f8fb;color:var(--ink);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";line-height:1.5}
+    .wrap{max-width:1100px;margin:40px auto;padding:0 20px}
+    .hero{background:linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0ea5e9 100%);border-radius:18px;color:white;padding:28px 28px 24px;box-shadow:0 8px 30px rgba(2,8,23,.25)}
+    .hero h1{margin:0 0 8px;font-size:28px;letter-spacing:.2px}
+    .hero p{margin:6px 0 0;color:#e2e8f0}
+    .grid{display:grid;gap:18px;margin-top:22px}
+    @media (min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+    .card{background:var(--panel);border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(15,23,42,.08)}
+    h2{font-size:22px;margin:0 0 10px}
+    h3{font-size:18px;margin:22px 0 8px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+    .kpi{background:#0ea5e911;border:1px solid #0ea5e944;padding:12px;border-radius:12px}
+    .kpi b{display:block;font-size:22px}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.2px}
+    .good{background:#16a34a14;color:#166534;border:1px solid #16a34a44}
+    .bad{background:#e11d4812;color:#9f1239;border:1px solid #e11d4844}
+    .neutral{background:#33415514;color:#334155;border:1px solid #64748b55}
+    .table-wrap{overflow:auto;border:1px solid #e5e7eb;border-radius:14px}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{position:sticky;top:0;background:#0f172a;color:white;text-align:center;padding:12px;border-bottom:0}
+    tbody td{border-top:1px solid #eef2f7;padding:10px;text-align:center}
+    tbody tr:nth-child(odd){background:#fafbfc}
+    tbody td:first-child{font-weight:600;text-align:left}
+    .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .legend .chip{display:flex;align-items:center;gap:8px}
+    .pill{padding:4px 8px;border-radius:999px;font-size:12px;font-weight:600}
+    .pill-green{background:#16a34a14;border:1px solid #16a34a44;color:#166534}
+    .pill-red{background:#e11d4812;border:1px solid #e11d4844;color:#9f1239}
+    .note{font-size:12px;color:var(--muted)}
+    .callout{border-left:4px solid var(--brand);background:#eaf3ff;padding:12px 14px;border-radius:10px;margin:14px 0;color:#0b2a5f}
+    .matrix{margin-top:12px}
+    .matrix .tier{font-weight:700}
+    .matrix .keep{background:#16a34a14;border:1px solid #16a34a44;color:#166534}
+    .matrix .noindex{background:#e11d4812;border:1px solid #e11d4844;color:#9f1239}
+    .actions{display:grid;gap:10px}
+    .actions li{margin:6px 0}
+    footer{margin:28px 0 20px;color:#475569;font-size:12px}
+    .muted{color:#64748b}
+    .tight p{margin:6px 0}
+    @media print{body{background:white}.hero{box-shadow:none}.card{box-shadow:none}}
+  </style>
 </head>
 <body>
-<div class="container">
+  <main class="wrap">
+    <section class="hero">
+      <h1>Executive Summary: A Data‑Driven SEO Plan to Focus on Revenue‑Driving Pages</h1>
+      <p>We align indexing and crawl budget with proven buyer intent to grow organic revenue for wholesale and liquidation traffic.</p>
+    </section>
 
-    <div class="header">
-        <div class="logo">MIAMILOTS</div>
-        <h1>Wholesale & Liquidation Platform Visuals Design Guide</h1>
-        <p>This is the definitive formula for creating high-conversion visuals, built on our most successful campaigns and validated by our own user data. Our design philosophy is simple: <strong>we create result oriented output.</strong> Every creative asset must prioritize clear business messaging over artistic visuals.</p>
-    </div>
+    <section class="grid">
+      <article class="card">
+        <h2>The Problem</h2>
+        <p>Our site generates millions of URLs, yet search traffic is highly concentrated. Google spends significant crawl budget on pages that receive zero clicks, especially untranslated product pages in non‑English languages. This dilutes SEO performance and slows ranking on our most valuable pages.</p>
 
-    <div class="mission">
-        <h2>🎯 The 3-Second Deal Rule</h2>
-        <p>Our data proves our best customers are scanners, not readers. You have 3 seconds to communicate the core opportunity. Your design must instantly answer:</p>
-        <p style="margin-top: 16px; padding-left: 20px; border-left: 4px solid #ff2065; font-weight: 600;">
-            1. What is the <strong>DEAL TYPE?</strong> - Fixed Price, Promo, or Negotiation?<br>
-            2. What is the <strong>MAIN TARGET?</strong> - A specific Brand or a Category?<br>
-            3. What is the <strong>PRODUCT?</strong> - Individual Products, a Lot, or a Feature?
-        </p>
-    </div>
+        <h2>The Analysis</h2>
+        <div class="tight">
+          <p>We segmented Google Search Console clicks by language and page type:</p>
+          <ul>
+            <li><strong>Main Pages</strong> Homepage and company information</li>
+            <li><strong>List Pages</strong> Categories, Brands, Newest, Lots</li>
+            <li><strong>Product Pages</strong> Individual item pages</li>
+          </ul>
+        </div>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">1</span> The Data Behind Our Rules: Why This Works</h2>
-        <p style="font-size: 17px; color: #4A5568;">These are not just opinions. Our design principles are a direct reflection of how our  customers behave on our site. Our email subscribers are our most active audience, and their data tells a clear story:</p>
-        <div class="stats-grid">
-            <div class="stat-card"><div class="stat-value">485</div><div class="stat-label">Actions per user from our email list—nearly <strong>5x higher engagement</strong> than organic visitors. They are power users.</div></div>
-            <div class="stat-card"><div class="stat-value">87</div><div class="stat-label">Pages viewed on average by an email visitor—almost <strong>7x more research</strong>. They dig deep for deals and data.</div></div>
-            <div class="stat-card"><div class="stat-value">+45%</div><div class="stat-label">Higher CTR when a promo includes a specific <strong>Reason/Qualifier</strong> like "1s & 2s" or "First Order Discount."</div></div>
-            <div class="stat-card"><div class="stat-value">+40%</div><div class="stat-label">Engagement on unique lots when using a <strong>"Make an Offer" CTA</strong> vs. a standard "View Product" button.</div></div>
-        </div>
-    </div>
+        <h2>Key Findings</h2>
+        <ul>
+          <li><span class="badge good">Traffic concentration</span> Bulgarian, English, and French deliver <strong>92% of clicks</strong>.</li>
+          <li><span class="badge bad">Product page gap</span> Outside English, product pages across other languages deliver negligible traffic despite massive index footprint.</li>
+          <li><span class="badge neutral">Bulgarian strength</span> BG leads on Main and List pages, signaling strong local engagement.</li>
+        </ul>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">2</span> The 3 Campaign Blueprints</h2>
-        <p style="font-size: 17px; color: #4A5568;">Every campaign you create will be for one of these three scenarios. Start with the correct blueprint.</p>
-        <div class="template-grid">
-            <div class="template-card"><span class="template-icon">🔥</span><h3>A: Promotion</h3><div class="use-when">"70% OFF 1s & 2s," "$5 Blowout," "First Order Discount." The offer is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The Offer: "70% OFF"<br>2. The Category: "All Shoes"<br>3. The Reason: "1s & 2s"<br>4. CTA: "Shop the Sale"</div></div>
-            <div class="template-card"><span class="template-icon">🤝</span><h3>B: Negotiation</h3><div class="use-when">Price is flexible. The invitation is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The Invitation: "NEGOTIATION"<br>2. The Brand: "Nike"<br>3. The Target: "Brand New Lots"<br>4. CTA: "Negotiate Now"</div></div>
-            <div class="template-card"><span class="template-icon">📢</span><h3>C: Announcement</h3><div class="use-when">New features, services, or important updates. The news is king.</div><div class="hierarchy"><strong>Hierarchy:</strong><br>1. The News: "Filter Now Live"<br>2. The Benefit: "Find Your Best Seller"<br>3. CTA: "Try It Now"</div></div>
+        <div class="callout">
+          <strong>Business impact</strong> Concentrate indexing on revenue‑driving languages and page types to accelerate discovery and rankings for buyers searching for clothing wholesale, electronics wholesale, and appliances wholesale.
         </div>
-    </div>
+      </article>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">3</span> The 2+4 Color System</h2>
-        <p style="font-size: 17px; color: #4A5568;">MiamiLots.com color system is built on 2 primary action colors and 4 versatile neutral colors. This creates a clean, consistent, and high-contrast experience, inspired by "Miami Vice". Feel free to use them across visual verticals to enhance brand message.</p>
-        <div class="color-grid">
-            <div class="color-card"><div class="color-swatch" style="background: #0D8082;"></div><div class="color-name">Primary Teal</div><div class="color-hex">#0D8082</div><div class="color-use"><strong>JOB: Get Clicks</strong><br>Use for CTAs & Prices.</div></div>
-            <div class="color-card"><div class="color-swatch" style="background: #ff2065;"></div><div class="color-name">Accent Pink</div><div class="color-hex">#ff2065</div><div class="color-use"><strong>JOB: Create Urgency</strong><br>Use for Discounts & Sales.</div></div>
-            <div class="color-card"><div class="color-swatch" style="background: #1A202C;"></div><div class="color-name">Dark Charcoal</div><div class="color-hex">#1A202C</div><div class="color-use"><strong>JOB: Be Readable</strong><br>Use for all main text and headlines.</div></div>
-            <div class="color-card"><div class="color-swatch" style="background: #4A5568;"></div><div class="color-name">Medium Gray</div><div class="color-hex">#4A5568</div><div class="color-use"><strong>JOB: Be Quiet</strong><br>Use for secondary info like dates or details.</div></div>
-            <div class="color-card"><div class="color-swatch" style="background: #E0F7FA;"></div><div class="color-name">Light Teal</div><div class="color-hex">#E0F7FA</div><div class="color-use"><strong>JOB: Add Highlight</strong><br>Use for background sections and info boxes.</div></div>
-            <div class="color-card"><div class="color-swatch" style="background: #F8FAFC; border: 2px solid #e2e8f0;"></div><div class="color-name">Light Gray BG</div><div class="color-hex">#F8FAFC</div><div class="color-use"><strong>JOB: Create Space</strong><br>Use for all main page and card backgrounds.</div></div>
+      <aside class="card">
+        <h2>Topline KPIs</h2>
+        <div class="kpis">
+          <div class="kpi"><b>2,977</b>Total Clicks</div>
+          <div class="kpi"><b>92%</b>Clicks from BG, EN, FR</div>
+          <div class="kpi"><b>~0</b>Non‑EN Product Clicks</div>
         </div>
-    </div>
-    
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">4</span> The Designer's Toolbox</h2>
-        <p style="font-size: 17px; color: #4A5568;">Use these exact specifications for consistency and performance.</p>
-        <div class="dimension-grid">
-            <div class="dimension-card"><h3>🖥️ Desktop Skyline</h3><div class="dimension-size">1300 × 275px</div><div class="detail">Homepage hero banner</div><div class="detail">Export: WEBP, max 100KB</div></div>
-            <div class="dimension-card"><h3>📱 Versatile Square</h3><div class="dimension-size">500 × 500px</div><div class="detail">Use for Mobile, WhatsApp & 3Box banners</div><div class="detail">Export WhatsApp: PNG/WEBP, max 100KB</div><div class="detail">Export Web/Mobile: WEBP, max 100KB</div></div>
-            <div class="dimension-card"><h3>📧 Email Banner</h3><div class="dimension-size">600px width</div><div class="detail">The banner is inserted into a single-column, mobile-first email template. No separate mobile version is needed.</div><div class="detail">Export: PNG, max 150KB</div></div>
-        </div>
-    </div>
+        <h3>SEO Focus Keywords</h3>
+        <p class="muted">Wholesale, Liquidation, clothing wholesale, electronics wholesale, appliances wholesale</p>
+      </aside>
+    </section>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">5</span> The Deal Hierarchy Law & Font System</h2>
-        <p style="font-size: 17px; color: #4A5568;">The visual importance must match the deal structure. Use these font sizes as your starting point for all desktop banners to ensure the hierarchy is clear and consistent.</p>
-        <div class="hierarchy-grid">
-            <div class="hierarchy-card critical"><span class="priority-badge">#1: THE HERO</span><h3>📢 Deal Type & Value</h3><div class="usage">The main event. Must be the largest element on the banner.</div><div class="font-spec">48px - 72px</div></div>
-            <div class="hierarchy-card critical"><span class="priority-badge">#2: THE SUBJECT</span><h3>🏷️ Brand & Category</h3><div class="usage">What is it? Must be instantly identifiable.</div><div class="font-spec">28px - 36px</div></div>
-            <div class="hierarchy-card critical"><span class="priority-badge">#3: THE SCALE</span><h3>📊 Size</h3><div class="usage">Defines the investment size qty, lots - scope of the deal.</div><div class="font-spec">22px - 28px</div></div>
-            <div class="hierarchy-card important"><span class="priority-badge">SUPPORTING INFO</span><h3>🎯 Reason / Qualifier</h3><div class="usage">Adds context and urgency "FBA", "NJ Overload", "Local Pickup", "Black Friday".</div><div class="font-spec">18px - 22px</div></div>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">6</span> Design Don'ts: The Readability Killers</h2>
-        <p style="font-size: 17px; color: #4A5568;">Any design choice that slows down a reseller's ability to scan for data is a conversion killer. The following practices are strictly forbidden because they violate the "3-Second Deal Rule."</p>
-        <div class="dont-grid">
-            <div class="dont-card"><h3>🚫 Cursive & Overly-Styled Fonts</h3><p class="why"><strong>Why it fails:</strong> Resellers' brains are optimized to scan block text for numbers and keywords, not to decipher calligraphy. It instantly fails the 3-second test.</p></div>
-            <div class="dont-card"><h3>🚫 Text on Busy Backgrounds</h3><p class="why"><strong>Why it fails:</strong> If the price or brand name doesn't have a clear, high-contrast background, it gets lost. A pattern or busy photo behind critical data makes it unreadable.</p></div>
-            <div class="dont-card"><h3>🚫 Text in Shapes or on a Path</h3><p class="why"><strong>Why it fails:</strong> Text in circles, on a diagonal, or following a curve forces the user to work to read it. This adds seconds to the scan time and should be avoided for all critical information.</p></div>
-            <div class="dont-card"><h3>🚫 Vague Headlines & CTAs</h3><p class="why"><strong>Why it fails:</strong> "Amazing Summer Deals!" tells a reseller nothing. "70% Off All Electronics Lots" tells them everything. Always prioritize the specific deal over a catchy but empty slogan.</p></div>
-        </div>
-    </div>
+    <section class="card">
+      <h2>Website Traffic Analysis by Language and Page Group</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Main Pages Clicks</th>
+              <th>List Pages Clicks</th>
+              <th>Product Pages Clicks</th>
+              <th>Total Clicks</th>
+              <th>% of Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Bulgarian (BG)</td><td>785</td><td>586</td><td>13</td><td>1,384</td><td>46.5%</td></tr>
+            <tr><td>English (EN)</td><td>400</td><td>79</td><td>100</td><td>579</td><td>19.4%</td></tr>
+            <tr><td>French (FR)</td><td>415</td><td>23</td><td>20</td><td>458</td><td>15.4%</td></tr>
+            <tr><td>German (DE)</td><td>71</td><td>6</td><td>32</td><td>109</td><td>3.7%</td></tr>
+            <tr><td>Romanian (RO)</td><td>134</td><td>5</td><td>8</td><td>147</td><td>4.9%</td></tr>
+            <tr><td>Spanish (ES)</td><td>58</td><td>2</td><td>14</td><td>74</td><td>2.5%</td></tr>
+            <tr><td>Polish (PL)</td><td>37</td><td>0</td><td>3</td><td>40</td><td>1.3%</td></tr>
+            <tr><td>Italian (IT)</td><td>25</td><td>0</td><td>9</td><td>34</td><td>1.1%</td></tr>
+            <tr><td>Russian (RU)</td><td>13</td><td>1</td><td>6</td><td>20</td><td>0.7%</td></tr>
+            <tr><td>Hungarian (HU)</td><td>12</td><td>0</td><td>3</td><td>15</td><td>0.5%</td></tr>
+            <tr><td>Greek (EL)</td><td>12</td><td>0</td><td>2</td><td>14</td><td>0.5%</td></tr>
+            <tr><td>Croatian (HR)</td><td>4</td><td>8</td><td>2</td><td>14</td><td>0.5%</td></tr>
+            <tr><td>Czech (CS)</td><td>4</td><td>0</td><td>6</td><td>10</td><td>0.3%</td></tr>
+            <tr><td>Ukrainian (UK)</td><td>4</td><td>1</td><td>0</td><td>5</td><td>0.2%</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>1,974</strong></td><td><strong>714</strong></td><td><strong>218</strong></td><td><strong>2,977</strong></td><td><strong>100%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Note: Based on the provided GSC click log. Represents a substantial sample of user search activity.</p>
+    </section>
 
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">7</span> Crafting High-Conversion Subject Lines</h2>
-        <p style="font-size: 17px; color: #4A5568;">A great banner is useless if the email is never opened. The subject line is the most important part of the email campaign. Follow these rules.</p>
-        <div class="do-dont-grid">
-            <div class="do">
-                <h4>✓ Formula: [Value] + [Product] + [Urgency/Qualifier]</h4>
-                <ul>
-                    <li>Lead with the DEAL. Use numbers, percentages %, and currency symbols $ first.</li>
-                    <li>Be SPECIFIC about the Brand or Category.</li>
-                    <li>Add a REASON to act now or name of the event e.g., "48-Hour Clearance", "NJ Overload", "Weekend Clearance", "Labor Day Promo".</li>
-                    <li>FRONT-LOAD the most important info. Assume it will be cut off on mobile.</li>
-                    <li><code>50% OFF - Electronics & Apparel Lots - 48-Hour Clearance</code></li>
-                    <li><code>NEGOTIATION SALE - All FBA Inventory - Labor Day Promo</code></li>
-                    <li><code>$5.00 MEGA Blowout - The North Face • Tory Burch • Nike...</code></li>
-                </ul>
-            </div>
-            <div class="dont">
-                <h4>✗ Don't Use Vague, Retail-Style Language</h4>
-                <ul>
-                    <li>Avoid generic, "fluffy" phrases that hide the value.</li>
-                    <li>Never bury the main offer at the end of the subject line.</li>
-                    <li>Don't be clever if it sacrifices clarity.</li>
-                    <li style="margin-top: 20px;"><code>Don't Miss Out on Our Amazing September Savings!</code></li>
-                    <li><code>Celebrate Fall With Miamilots Deals</code></li>
-                    <li><code>Find the Best Prices in our Labor Day Sale: 50% OFF</code></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2 class="section-title"><span class="section-number">8</span> The Quality Control Process</h2>
-        <p style="font-size: 17px; color: #4A5568;">Follow these two steps before submitting any creative for review.</p>
-        <h3 class="section-subtitle" style="margin-top: 24px;">Step 1: The 5-Point Pre-Flight Check</h3>
-        <div class="checklist" style="margin:0;">
-            <ul>
-                <li>Is the Deal Type Promo, Negotiation, etc. instantly clear?</li>
-                <li>Does the design obey the Deal Hierarchy & Font System?</li>
-                <li>Is the Reason/Qualifier e.g., "1s & 2s" clear and effective?</li>
-                <li>Is the Call-to-Action correct for the deal type? "Buy Now" vs. "Make Offer"</li>
-                <li>Is every word, number, and brand name 100% accurate and spell-checked?</li>
-            </ul>
-        </div>
-        <h3 class="section-subtitle">Step 2: LLM-Powered Self-Assessment</h3>
-        <div class="prompt-box-container">
-            <button class="copy-btn" id="copy-button-main">Copy</button>
-            <pre class="prompt-box" id="prompt-text-main">
-You are a professional reseller scanning Miamilots visuals. You have 3 seconds to decide if this is worth your time. Can you instantly answer: Can I read this? • Is the text clear and easy to scan? • Is anything hard to read due to fonts, colors, or busy backgrounds? What's the opportunity? • What's the deal? (Discount, Price, Negotiation, New Feature) • What am I buying? (Specific brands, categories, or lot types) • Why should I act now? (Limited time, special condition, exclusive access) What do I do next? • Is there a clear button or action? • Does it make sense for this type of deal? OUTPUT: ✓ YES or ✗ NO for each question Brief list of what's confusing or missing.
+    <section class="card">
+      <h2>The Strategic Indexing Matrix</h2>
+      <p class="note">Tier 1 BG, EN, FR (>400 clicks). Tier 2 DE, RO, ES (70–150 clicks). Tier 3 PL, IT, RU, HU, EL, HR, CS, UK (<50 clicks).</p>
+      <div class="table-wrap matrix">
+        <table>
+          <thead>
+            <tr>
+              <th>Page Type</th>
+              <th>Tier 1: BG, EN, FR<br><small>(92% of Traffic)</small></th>
+              <th>Tier 2: DE, RO, ES<br><small>(11% of Traffic)</small></th>
+              <th>Tier 3: All Others<br><small>(<2% of Traffic)</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:left"><span class="tier">Main Pages</span><br><small>Homepage, About, etc.</small></td>
+              <td><span class="pill pill-green">KEEP INDEX</span><br><small>Traffic: <strong>1,600+ clicks</strong></small></td>
+              <td><span class="pill pill-green">KEEP INDEX</span><br><small>Traffic: <strong>260+ clicks</strong></small></td>
+              <td><span class="pill pill-green">KEEP INDEX</span><br><small>Traffic: <strong>~80 clicks</strong></small></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><span class="tier">List Pages</span><br><small>Categories, Brands</small></td>
+              <td><span class="pill pill-green">KEEP INDEX</span><br><small>Traffic: <strong>688 clicks</strong></small></td>
+              <td><span class="pill pill-red">APPLY NOINDEX</span><br><small>Traffic: <strong>13 clicks</strong></small></td>
+              <td><span class="pill pill-red">APPLY NOINDEX</span><br><small>Traffic: <strong>10 clicks</strong></small></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><span class="tier">Product Pages</span><br><small>Individual items</small></td>
+              <td><span class="pill pill-green">KEEP INDEX (English only)</span><br><small>Traffic: <strong>100 clicks (EN)</strong></small></td>
+              <td><span class="pill pill-red">APPLY NOINDEX</span><br><small>Traffic: <strong>54 clicks</strong></small></td>
+              <td><span class="pill pill-red">APPLY NOINDEX</span><br><small>Traffic: <strong>22 clicks</strong></small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<strong>[PASTE YOUR CONTENT HERE]</strong></pre>
-        </div>
-    </div>
+    <section class="card">
+      <h2>The Business Case</h2>
+      <p>We are not losing valuable traffic. We are cleaning up our index footprint to match real buyer behavior. This improves crawl efficiency, Core Web Vitals, and ranking velocity on pages that drive revenue from wholesale and liquidation buyers.</p>
+      <div class="legend">
+        <div class="chip"><span class="pill-green pill">KEEP INDEX</span><span class="muted">Retain visibility for proven demand</span></div>
+        <div class="chip"><span class="pill-red pill">APPLY NOINDEX</span><span class="muted">Remove low‑value URLs from the index</span></div>
+      </div>
+    </section>
 
-</div>
-<script>
-    const mainCopyButton = document.getElementById('copy-button-main');
-    const mainPromptText = document.getElementById('prompt-text-main');
-    mainCopyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(mainPromptText.textContent).then(() => {
-            mainCopyButton.textContent = 'Copied!';
-            setTimeout(() => { mainCopyButton.textContent = 'Copy'; }, 2000);
-        });
-    });
-</script>
+    <section class="card">
+      <h2>Implementation Plan</h2>
+      <ol class="actions">
+        <li><strong>Robots Meta Rules</strong> Roll out conditional <code>noindex, follow</code> on Tier 2 and Tier 3 List pages and on all non‑EN product pages. Preserve internal linking equity with <code>follow</code>.</li>
+        <li><strong>XML Sitemaps</strong> Publish language tier sitemaps. Include only Tier 1 Main and List pages plus EN product pages.</li>
+        <li><strong>Canonical Hygiene</strong> Standardize canonicals and URL normalization to avoid duplicates in multilingual contexts.</li>
+        <li><strong>Translations</strong> Prioritize high‑intent List pages for BG, EN, FR. Defer mass product translations until they show traction.</li>
+        <li><strong>Monitoring</strong> Track impressions, clicks, indexed pages, and crawl stats weekly. Guardrail with custom alerts.</li>
+      </ol>
+
+      <h3>Success Metrics (60–90 days)</h3>
+      <ul>
+        <li>↓ Indexed pages for low‑value segments</li>
+        <li>↑ Crawl rate and average position for Tier 1 List pages</li>
+        <li>↑ Click share on BG, EN, FR List and Main pages</li>
+        <li>Stable or ↑ conversions from organic sessions</li>
+      </ul>
+    </section>
+
+    <footer class="wrap">
+      <p class="muted">SEO for Wholesale and Liquidation buyers. Focus on revenue pages that match real search demand for clothing wholesale, electronics wholesale, and appliances wholesale.</p>
+    </footer>
+  </main>
 </body>
 </html>
